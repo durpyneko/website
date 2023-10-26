@@ -91,7 +91,10 @@ export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
             paddingTop={"5px"}
             paddingRight={"5px"}
           >
-            <Link href="https://github.com/idurpyDude12/website">
+            <Link
+              href="https://github.com/idurpyDude12/website"
+              target="_blank"
+            >
               <Icon
                 as={FiGithub}
                 _hover={{
