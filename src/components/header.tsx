@@ -7,7 +7,7 @@ export default function Header() {
         <title>durpy's site</title>
         <meta
           name="description"
-          content="Hey! That's is my portfolio url you are looking at >.>"
+          content="Hey, I'm durpyneko. Welcome to my site!"
         />
         <meta name="keywords" content="Vercel, Portfolio, website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
