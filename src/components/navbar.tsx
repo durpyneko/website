@@ -92,7 +92,7 @@ export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
             paddingRight={"5px"}
           >
             <Link
-              href="https://github.com/iDurpyDude12/website"
+              href="https://github.com/durpyneko/website"
               target="_blank"
             >
               <Icon
