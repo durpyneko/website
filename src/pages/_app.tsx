@@ -1,4 +1,8 @@
+// Next
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
+
+// Chakra
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../lib/theme";
 
@@ -25,6 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
+      <Analytics />
     </ChakraProvider>
   );
 }
