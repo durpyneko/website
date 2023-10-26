@@ -47,7 +47,7 @@ export default function HomeContent() {
           >
             <Text fontSize={"md"} p={"20px"}>
               {
-                "Welcome to my site! I like to play video games and program in my freetime. I mostly program is JavaScript/Typescript but plan to learn Rust and C/C++ soon for applications and reverse engineering. I have a good understanding of Python."
+                "Welcome to my site! I like to play video games and program in my freetime. I mostly program in JavaScript/Typescript but plan to learn Rust and C/C++ soon for applications and reverse engineering. I have a good understanding of Python."
               }
             </Text>
           </Flex>
