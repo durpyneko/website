@@ -1,26 +1,19 @@
-// NextJS
-import Head from "next/head";
-
-// Chakra Imports
-import { Center } from "@chakra-ui/react";
-
-// Fonts
-import { JetBrains_Mono } from "next/font/google";
-const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+// React
+import { useState } from "react";
 
 // Components
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
+import MainBody from "@/components/main-body";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("home");
   return (
     <>
       <Header />
       <main>
-        <Navbar />
-        <Center className={`${JetBrainsMono.className}`} fontSize={"4xl"}>
-          Hello World!
-        </Center>
+        <Navbar setActiveTab={setActiveTab} />
+        <MainBody activeTab={activeTab} />
       </main>
     </>
   );
