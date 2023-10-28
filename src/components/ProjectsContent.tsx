@@ -32,7 +32,6 @@ export default function ProjectsContent() {
               href={"https://github.com/durpyneko/website"}
               image={"/project_thumnails/website.png"}
               description={"Personal website and portfolio"}
-              w={{ base: "90%", sm: "45%", md: "30%", lg: "22.5%" }}
             />
           </GridItem>
           <GridItem>
@@ -41,7 +40,6 @@ export default function ProjectsContent() {
               href={"https://github.com/durpyneko/neko-logger"}
               image={"/project_thumnails/neko-logger.png"}
               description={"custom logger for time, function name and context"}
-              w={{ base: "90%", sm: "45%", md: "30%", lg: "22.5%" }}
             />
           </GridItem>
           <GridItem>
@@ -50,7 +48,6 @@ export default function ProjectsContent() {
               href={"https://github.com/durpyneko/imisssaru"}
               image={"/project_thumnails/imisssaru.png"}
               description={"imisssaru inspired by imissfauna"}
-              w={{ base: "90%", sm: "45%", md: "30%", lg: "22.5%" }}
             />
           </GridItem>
         </Grid>
