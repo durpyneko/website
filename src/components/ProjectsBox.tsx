@@ -36,7 +36,7 @@ export default function ProjectsBox({
             <VStack>
               <Image
                 src={image}
-                h={"200px"}
+                h={{ base: "160px", md: "200px" }}
                 borderRadius={"8px"}
                 marginTop={"-20px"}
                 placeholder="blur"
