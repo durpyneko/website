@@ -32,7 +32,7 @@ export default function SocialsButton({
   }, [href]);
   return (
     <>
-      <Link href={href}>
+      <Link href={href} target={"_blank"}>
         <Box
           w={{ base: "400px", md: "600px" }} // Set to 100vw on smaller screens
           h={"60px"}
