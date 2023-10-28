@@ -1,3 +1,6 @@
+// Chakra
+import { Text } from "@chakra-ui/react";
+
 // Components
 import HomeContent from "@/components/HomeContent";
 import ProjectsContent from "@/components/ProjectsContent";
@@ -17,7 +20,9 @@ export default function MainBody({ activeTab }: { activeTab: any }) {
       content = <SocialsContent />;
       break;
     default:
-      content = null;
+      content = (
+        <Text>Nothing here to display. How did you even get here?</Text>
+      );
   }
   return <>{content}</>;
 }

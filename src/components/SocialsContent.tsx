@@ -1,25 +1,51 @@
 // Chakra Imports
-import { Box, Center, Text, Flex } from "@chakra-ui/react";
+import { Center, VStack } from "@chakra-ui/react";
+
+// Components
+import SocialsButton from "./SocialsButton";
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
-export default function HomeContent() {
+// Icons
+import { FaTwitter } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { SiAnilist } from "react-icons/si";
+import { FaSteam } from "react-icons/fa";
+
+export default function SocialsContent() {
   return (
     <>
-      <Center>
-        <Box
-          w={{ base: "100vw", md: "70vw" }} // Set to 100vw on smaller screens
-          p={"20px"}
-          className={`${JetBrainsMono.className}`}
-        >
-          <Flex maxW={"4xl"}>
-            <Text fontSize={"md"} p={"20px"}>
-              {"Socials"}
-            </Text>
-          </Flex>
-        </Box>
+      <Center className={`${JetBrainsMono.className}`} p={"40px"}>
+        <VStack>
+          <SocialsButton
+            title={"Twitter"}
+            icon={FaTwitter}
+            href={"https://twitter.com"}
+          />
+          <SocialsButton
+            title={"durpyneko"}
+            icon={FaDiscord}
+            href={"https://discord.com"}
+          />
+          <SocialsButton
+            title={"durpyneko"}
+            icon={FaGithub}
+            href={"https://github.com/durpyneko"}
+          />
+          <SocialsButton
+            title={"durpyneko"}
+            icon={SiAnilist}
+            href={"https://anilist.co/user/durpyneko"}
+          />
+          <SocialsButton
+            title={"durpyneko"}
+            icon={FaSteam}
+            href={"https://steamcommunity.com/id/durpyneko/"}
+          />
+        </VStack>
       </Center>
     </>
   );

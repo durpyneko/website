@@ -29,13 +29,10 @@ export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
         textAlign={"center"}
         borderBottomRadius={"25px"}
         bgColor={"#332e45"}
+        className={`${JetBrainsMono.className}`}
       >
         <Center>
-          <Tabs
-            variant={"unstyled"}
-            className={`${JetBrainsMono.className}`}
-            colorScheme="gray"
-          >
+          <Tabs variant={"unstyled"} colorScheme="gray">
             <TabList>
               <Tab
                 w={"80px"}
@@ -68,7 +65,7 @@ export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
                 _selected={{ borderBottom: "#877ab7 2px solid" }}
                 onClick={() => setActiveTab("projects")}
               >
-                <Text>pojects</Text>
+                <Text>projects</Text>
               </Tab>
               <Box w="10px" /> {/* Add space here */}
               <Tab
@@ -91,10 +88,7 @@ export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
             paddingTop={"5px"}
             paddingRight={"5px"}
           >
-            <Link
-              href="https://github.com/durpyneko/website"
-              target="_blank"
-            >
+            <Link href="https://github.com/durpyneko/website" target="_blank">
               <Icon
                 as={FiGithub}
                 _hover={{
