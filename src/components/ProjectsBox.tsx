@@ -26,8 +26,8 @@ export default function ProjectsBox({
     <>
       <Center p={"20px"}>
         <Box
-          w={"360px"}
-          h={"360px"}
+          w={{ base: "360px", md: "300px" }} // Set to 300px on smaller screens
+          h={{ base: "360px", md: "300px" }}
           backgroundColor={"#6b6091"}
           borderRadius={"25px"}
           padding={"20px"}
@@ -42,7 +42,6 @@ export default function ProjectsBox({
                 placeholder="blur"
                 loading="lazy"
               />
-
               <HStack>
                 <Link
                   href={href}
@@ -50,7 +49,7 @@ export default function ProjectsBox({
                   _hover={{ textDecoration: "none", color: "#443d5c" }}
                 >
                   <Text
-                    fontSize={"2xl"}
+                    fontSize={{ base: "2xl", md: "1xl" }}
                     borderBottom={"2px"}
                     borderColor={"#443d5c"}
                   >
@@ -59,7 +58,7 @@ export default function ProjectsBox({
                   </Text>
                 </Link>
               </HStack>
-              <Text fontSize={"1xl"}>{description}</Text>
+              <Text fontSize={{ base: "1xl", md: "md" }}>{description}</Text>
             </VStack>
           </Center>
         </Box>
