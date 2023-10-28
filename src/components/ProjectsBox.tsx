@@ -26,8 +26,8 @@ export default function ProjectsBox({
     <>
       <Center p={"20px"}>
         <Box
-          w={{ base: "360px", md: "300px" }} // Set to 300px on smaller screens
-          h={{ base: "360px", md: "300px" }}
+          w={{ base: "300px", md: "360px" }} // Set to 300px on smaller screens
+          h={{ base: "300px", md: "360px" }}
           backgroundColor={"#6b6091"}
           borderRadius={"25px"}
           padding={"20px"}
@@ -58,7 +58,7 @@ export default function ProjectsBox({
                   </Text>
                 </Link>
               </HStack>
-              <Text fontSize={{ base: "1xl", md: "md" }}>{description}</Text>
+              <Text fontSize={{ base: "md", md: "1xl" }}>{description}</Text>
             </VStack>
           </Center>
         </Box>
