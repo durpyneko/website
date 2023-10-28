@@ -32,7 +32,11 @@ export default function SocialsButton({
   }, [href]);
   return (
     <>
-      <Link href={href} target={"_blank"}>
+      <Link
+        href={href}
+        target={"_blank"}
+        _hover={{ textDecoration: "none", color: "#443d5c" }}
+      >
         <Box
           w={{ base: "400px", md: "600px" }} // Set to 100vw on smaller screens
           h={"60px"}
