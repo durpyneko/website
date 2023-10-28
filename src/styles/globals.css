@@ -4,3 +4,28 @@
     -webkit-background-clip: text;
     color: transparent;
 }
+
+.container-with-scrollbar {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #6b6091 transparent;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #6b6091;
+        border-radius: 6px;
+        background-image: linear-gradient(to bottom, #6b6091, transparent);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #574b7d;
+    }
+}

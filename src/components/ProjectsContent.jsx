@@ -1,25 +1,60 @@
 // Chakra Imports
-import { Box, Center, Text, Flex } from "@chakra-ui/react";
+import { Center, Grid, GridItem } from "@chakra-ui/react";
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
-export default function HomeContent() {
+// Components
+import ProjectsBox from "./ProjectsBox";
+
+export default function ProjectsContent() {
+  const columnCounts = {
+    base: 1, // On smaller screens
+    sm: 1, // On small screens and above
+    md: 2, // On medium screens and above
+    lg: 3, // On large screens and above
+  };
   return (
     <>
-        <Center>
-          <Box w={{ base: "100vw", md: "70vw" }} // Set to 100vw on smaller screens
-           p={"20px"} className={`${JetBrainsMono.className}`}>
-            <Flex maxW={"4xl"}>
-            <Text fontSize={"md"} p={"20px"}>
-              {
-                "Projects"
-              }
-            </Text>
-          </Flex>
-          </Box>
-        </Center>
+      <Center className={`${JetBrainsMono.className}`}>
+        <Grid
+          templateColumns={{
+            base: `repeat(${columnCounts.base}, 1fr)`,
+            sm: `repeat(${columnCounts.sm}, 1fr)`,
+            md: `repeat(${columnCounts.md}, 1fr)`,
+            lg: `repeat(${columnCounts.lg}, 1fr)`,
+          }}
+        >
+          <GridItem>
+            <ProjectsBox
+              title={"Website"}
+              href={"https://github.com/durpyneko/website"}
+              image={"/project_thumnails/website.png"}
+              desciption={"Personal website and portfolio"}
+              w={{ base: "90%", sm: "45%", md: "30%", lg: "22.5%" }}
+            />
+          </GridItem>
+          <GridItem>
+            <ProjectsBox
+              title={"neko logger [TBA]"}
+              href={"https://github.com/durpyneko/neko-logger"}
+              image={"/project_thumnails/neko-logger.png"}
+              desciption={"custom logger for time, function name and context"}
+              w={{ base: "90%", sm: "45%", md: "30%", lg: "22.5%" }}
+            />
+          </GridItem>
+          <GridItem>
+            <ProjectsBox
+              title={"imisssaru"}
+              href={"https://github.com/durpyneko/imisssaru"}
+              image={"/project_thumnails/imisssaru.png"}
+              desciption={"imisssaru inspired by imissfauna"}
+              w={{ base: "90%", sm: "45%", md: "30%", lg: "22.5%" }}
+            />
+          </GridItem>
+        </Grid>
+      </Center>
     </>
   );
 }

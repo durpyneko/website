@@ -19,6 +19,7 @@ export default function HomeContent() {
               style={{ borderRadius: "50%" }}
               src="/profile.png"
               boxSize={"55px"}
+              placeholder="blur"
               loading="lazy"
             />
             <Text fontSize="3xl">
