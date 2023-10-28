@@ -13,12 +13,12 @@ import { FiExternalLink } from "react-icons/fi";
 
 export default function ProjectsBox({
   title,
-  desciption,
+  description,
   href,
   image,
 }: {
   title: any;
-  desciption: any;
+  description: any;
   href: any;
   image: any;
 }) {
@@ -59,7 +59,7 @@ export default function ProjectsBox({
                   </Text>
                 </Link>
               </HStack>
-              <Text fontSize={"1xl"}>{desciption}</Text>
+              <Text fontSize={"1xl"}>{description}</Text>
             </VStack>
           </Center>
         </Box>
