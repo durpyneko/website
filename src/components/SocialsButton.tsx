@@ -38,7 +38,7 @@ export default function SocialsButton({
         _hover={{ textDecoration: "none", color: "#443d5c" }}
       >
         <Box
-          w={{ base: "400px", md: "600px" }} // Set to 400px on smaller screens
+          w={{ base: "260px", md: "560px" }} // Set to 260px on smaller screens
           h={"60px"}
           p={"10px"}
           backgroundColor={"#6b6091"}
