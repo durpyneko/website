@@ -36,7 +36,7 @@ export default function ProjectsContent() {
           </GridItem>
           <GridItem>
             <ProjectsBox
-              title={"neko logger [TBA]"}
+              title={"neko logger"}
               href={"https://github.com/durpyneko/neko-logger"}
               image={"/project_thumnails/neko-logger.png"}
               description={"custom logger for time, function name and context"}
