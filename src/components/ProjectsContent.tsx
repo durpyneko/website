@@ -39,7 +39,7 @@ export default function ProjectsContent() {
               title={"neko logger"}
               href={"https://github.com/durpyneko/neko-logger"}
               image={"/project_thumnails/neko-logger.png"}
-              description={"custom logger for time, function name and context"}
+              description={"custom logger for time, function name and log message"}
             />
           </GridItem>
           <GridItem>
