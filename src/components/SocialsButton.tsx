@@ -5,15 +5,13 @@ import React, { useState, useEffect } from "react";
 import { Box, Center, HStack, Icon, Text, Link } from "@chakra-ui/react";
 
 export default function SocialsButton({
-  title,
   icon,
   href,
 }: {
-  title: any;
   icon: any;
   href: any;
 }) {
-  const [siteTitle, setSiteTitle] = useState(title);
+  const [siteTitle, setSiteTitle] = useState();
 
   useEffect(() => {
     const websiteNameMatch = href.match(/:\/\/(www\.)?([^/]+)\/?/);
@@ -48,7 +46,7 @@ export default function SocialsButton({
           <Center h="100%">
             <HStack>
               <Icon boxSize={"6"} as={icon} />
-              <Text>{title}</Text>
+              <Text>{siteTitle}</Text>
             </HStack>
           </Center>
         </Box>
