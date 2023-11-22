@@ -1,7 +1,7 @@
 // React
 import { useState } from "react";
 
-// Chakra Imports
+// Chakra
 import { Box, Center, Flex, Icon, Link, Text } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 

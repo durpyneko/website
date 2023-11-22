@@ -21,7 +21,7 @@ export default function MainBody({ activeTab }: { activeTab: any }) {
       break;
     default:
       content = (
-        <Text>Nothing here to display. How did you even get here?</Text>
+        <Text>Nothing here to display. How did you even get here!?!??!</Text>
       );
   }
   return <>{content}</>;
