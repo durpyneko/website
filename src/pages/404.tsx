@@ -1,8 +1,11 @@
 // Chakra
-import { Center, Image, Text, Link, VStack } from "@chakra-ui/react";
+import { Center, Image, Text, Link, VStack, Icon } from "@chakra-ui/react";
 
 // Next
 import Head from "next/head";
+
+// Icons
+import { FiExternalLink } from "react-icons/fi";
 
 export default function NotFound() {
   return (
@@ -15,6 +18,7 @@ export default function NotFound() {
           <Link href="/">
             <Text fontSize={"4xl"}>
               {"<"}Home{">"}
+              <Icon boxSize={"6"} as={FiExternalLink} />
             </Text>
           </Link>
           <Image
