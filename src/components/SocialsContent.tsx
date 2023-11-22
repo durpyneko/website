@@ -9,7 +9,6 @@ import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 // Icons
-import { FaTwitter } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiAnilist } from "react-icons/si";
