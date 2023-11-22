@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 // Chakra Imports
 import { Box, Center, HStack, Icon, Text, Link } from "@chakra-ui/react";
 
+// Icons
+import { FiExternalLink } from "react-icons/fi";
+
 export default function SocialsButton({
   icon,
   href,
@@ -18,7 +21,7 @@ export default function SocialsButton({
 
     if (websiteNameMatch && websiteNameMatch[2]) {
       const websiteName = websiteNameMatch[2].replace(
-        /\.(com|co|org|net|gov|edu|io)$/,
+        /\.(com|co|org|net|gov|edu|io|app)$/,
         ""
       );
 
@@ -26,6 +29,8 @@ export default function SocialsButton({
         websiteName.charAt(0).toUpperCase() + websiteName.slice(1);
 
       setSiteTitle(capitalizedWebsiteName);
+    } else {
+      setSiteTitle(href);
     }
   }, [href]);
   return (
@@ -50,6 +55,13 @@ export default function SocialsButton({
             </HStack>
           </Center>
         </Box>
+        <Icon
+          boxSize={"6"}
+          float={"right"}
+          marginTop={"-42"}
+          marginRight={"5"}
+          as={FiExternalLink}
+        />
       </Link>
     </>
   );

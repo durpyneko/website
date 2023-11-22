@@ -20,11 +20,11 @@ export default function SocialsContent() {
     <>
       <Center className={`${JetBrainsMono.className}`} p={"40px"}>
         <VStack>
-          <SocialsButton icon={FaTwitter} href={"https://twitter.com"} />
           <SocialsButton
-            icon={FaDiscord}
-            href={"https://discord.com/users/763864687481323620"}
+            icon={""}
+            href={"https://bsky.app/profile/durpy.bsky.social"}
           />
+          <SocialsButton icon={FaDiscord} href={"durpyneko"} />
           <SocialsButton
             icon={FaGithub}
             href={"https://github.com/durpyneko"}
