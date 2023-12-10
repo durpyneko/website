@@ -21,7 +21,7 @@ export default function SocialsContent() {
         <VStack>
           <SocialsButton
             icon={""}
-            href={"https://bsky.app/profile/durpy.bsky.social"}
+            href={"https://bsky.app/profile/durpy.assassin.dev"}
           />
           <SocialsButton icon={FaDiscord} href={"durpyneko"} />
           <SocialsButton
