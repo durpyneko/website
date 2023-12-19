@@ -75,7 +75,7 @@ export default function HomeContent() {
           <Box px={{ base: "0", md: "50px" }}>
             <Box mb={"15px"}>
               <HStack>
-                <FaMusic />
+                <Text as={FaMusic} fontSize={"lg"}></Text>
                 <Text fontSize={"2xl"} as={"u"}>
                   Music
                 </Text>
