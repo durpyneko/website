@@ -1,5 +1,25 @@
 // Chakra Imports
-import { Box, Center, Text, HStack, Image, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Text,
+  HStack,
+  Image,
+  Flex,
+  VStack,
+} from "@chakra-ui/react";
+
+// Icons
+import { FaMusic } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiRust,
+  SiPython,
+  SiNextdotjs,
+} from "react-icons/si";
+import { LuCode2 } from "react-icons/lu";
+import { FaReact } from "react-icons/fa";
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
@@ -48,10 +68,57 @@ export default function HomeContent() {
           >
             <Text fontSize={"md"} p={"20px"}>
               {
-                "Welcome to my site! I like to play video games and program in my freetime. I mostly program in JavaScript/Typescript but plan to learn Rust and C/C++ soon for applications and reverse engineering. I have a good understanding of Python."
+                "Welcome to my site! I like to play video games and program in my freetime. I mostly program in JavaScript/Typescript and know a little how Rust works. I have a good understanding of Python."
               }
             </Text>
           </Flex>
+          <Box px={{ base: "0", md: "50px" }}>
+            <Box mb={"15px"}>
+              <HStack>
+                <FaMusic />
+                <Text fontSize={"2xl"} as={"u"}>
+                  Music
+                </Text>
+              </HStack>
+              <Text>• DnB, Breakcore</Text>
+              <Text>• Metal, Djent</Text>
+              <Text>• Techno</Text>
+            </Box>
+            <Box>
+              <HStack>
+                <Text as={LuCode2} fontSize={"2xl"}></Text>
+                <Text fontSize={"2xl"} as={"u"}>
+                  Languages / Other
+                </Text>
+              </HStack>
+              <Box>
+                <HStack>
+                  <SiJavascript />
+                  <Text>JavaScript</Text>
+                </HStack>
+                <HStack>
+                  <SiTypescript />
+                  <Text>Typescript</Text>
+                </HStack>
+                <HStack>
+                  <SiRust />
+                  <Text>Rust</Text>
+                </HStack>
+                <HStack>
+                  <SiPython />
+                  <Text>Python</Text>
+                </HStack>
+                <HStack>
+                  <FaReact />
+                  <Text>React</Text>
+                </HStack>
+                <HStack>
+                  <SiNextdotjs />
+                  <Text>NextJS</Text>
+                </HStack>
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Center>
     </>
