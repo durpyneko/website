@@ -1,8 +1,9 @@
-// Chakra Imports
+// Chakra
 import { Center, VStack } from "@chakra-ui/react";
 
 // Components
-import SocialsButton from "./SocialsButton";
+import SocialsButton from "@/components/SocialsButton";
+import Header from "@/components/Header";
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
@@ -11,12 +12,13 @@ const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 // Icons
 import { FaDiscord } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { SiAnilist } from "react-icons/si";
+import { SiAnilist, SiKofi } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
 
 export default function SocialsContent() {
   return (
     <>
+      <Header header="Socials" />
       <Center className={`${JetBrainsMono.className}`} p={"40px"}>
         <VStack>
           <SocialsButton
@@ -36,6 +38,7 @@ export default function SocialsContent() {
             icon={FaSteam}
             href={"https://steamcommunity.com/id/durpyneko/"}
           />
+          <SocialsButton icon={SiKofi} href={"https://ko-fi.com/durpyneko"} />
         </VStack>
       </Center>
     </>

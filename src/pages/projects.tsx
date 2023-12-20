@@ -6,9 +6,10 @@ import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 // Components
-import ProjectsBox from "./ProjectsBox";
+import ProjectsBox from "@/components/ProjectsBox";
+import Header from "@/components/Header";
 
-export default function ProjectsContent() {
+export default function Projects() {
   const columnCounts = {
     base: 1, // On smaller screens
     sm: 1, // On small screens and above
@@ -17,6 +18,7 @@ export default function ProjectsContent() {
   };
   return (
     <>
+      <Header header="Projects" />
       <Center className={`${JetBrainsMono.className}`}>
         <Grid
           templateColumns={{
@@ -39,7 +41,9 @@ export default function ProjectsContent() {
               title={"neko logger"}
               href={"https://github.com/durpyneko/neko-logger"}
               image={"/project_thumnails/neko-logger.png"}
-              description={"custom logger for time, function name and log message"}
+              description={
+                "custom logger for time, function name and log message"
+              }
             />
           </GridItem>
           <GridItem>

@@ -1,7 +1,7 @@
 // React
 import React, { useState, useEffect } from "react";
 
-// Chakra Imports
+// Chakra
 import { Box, Center, HStack, Icon, Text, Link } from "@chakra-ui/react";
 
 // Icons

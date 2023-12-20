@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import NextLink from "next/link";
 
 // Chakra
 import { Box, Center, Flex, Icon, Link, Text } from "@chakra-ui/react";
@@ -12,11 +12,7 @@ import { FiGithub } from "react-icons/fi";
 import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
-/* interface NavbarProps {
-  setActiveTab: (tab: string) => void;
-} */
-
-export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
+export default function Navbar() {
   return (
     <>
       <Box
@@ -34,52 +30,55 @@ export default function Navbar({ setActiveTab }: { setActiveTab: any }) {
         <Center>
           <Tabs variant={"unstyled"} colorScheme="gray">
             <TabList>
-              <Tab
-                w={"80px"}
-                _hover={{
-                  color: "#a393dd",
-                  transition: "color 0.2s linear",
-                  cursor: "pointer",
-                }}
-                _selected={{ borderBottom: "#877ab7 2px solid" }}
-                onClick={() => setActiveTab("home")}
-              >
-                <Text
+              <NextLink href={"/"}>
+                <Tab
+                  w={"80px"}
                   _hover={{
                     color: "#a393dd",
                     transition: "color 0.2s linear",
                     cursor: "pointer",
                   }}
+                  _selected={{ borderBottom: "#877ab7 2px solid" }}
                 >
-                  home
-                </Text>
-              </Tab>
+                  <Text
+                    _hover={{
+                      color: "#a393dd",
+                      transition: "color 0.2s linear",
+                      cursor: "pointer",
+                    }}
+                  >
+                    home
+                  </Text>
+                </Tab>
+              </NextLink>
               <Box w="10px" /> {/* Add space here */}
-              <Tab
-                w={"80px"}
-                _hover={{
-                  color: "#a393dd",
-                  transition: "color 0.2s linear",
-                  cursor: "pointer",
-                }}
-                _selected={{ borderBottom: "#877ab7 2px solid" }}
-                onClick={() => setActiveTab("projects")}
-              >
-                <Text>projects</Text>
-              </Tab>
+              <NextLink href={"/projects"}>
+                <Tab
+                  w={"80px"}
+                  _hover={{
+                    color: "#a393dd",
+                    transition: "color 0.2s linear",
+                    cursor: "pointer",
+                  }}
+                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                >
+                  <Text>projects</Text>
+                </Tab>
+              </NextLink>
               <Box w="10px" /> {/* Add space here */}
-              <Tab
-                w={"80px"}
-                _hover={{
-                  color: "#a393dd",
-                  transition: "color 0.2s linear",
-                  cursor: "pointer",
-                }}
-                _selected={{ borderBottom: "#877ab7 2px solid" }}
-                onClick={() => setActiveTab("socials")}
-              >
-                <Text>socials</Text>
-              </Tab>
+              <NextLink href={"/socials"}>
+                <Tab
+                  w={"80px"}
+                  _hover={{
+                    color: "#a393dd",
+                    transition: "color 0.2s linear",
+                    cursor: "pointer",
+                  }}
+                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                >
+                  <Text>socials</Text>
+                </Tab>
+              </NextLink>
             </TabList>
           </Tabs>
           <Flex

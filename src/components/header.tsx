@@ -1,11 +1,12 @@
 // Next
 import Head from "next/head";
 
-export default function Header() {
+export default function Header({ header }: { header?: string }) {
+  const pageTitle = header ? `durpy's site | ${header}` : "durpy's site";
   return (
     <>
       <Head>
-        <title>durpy's site</title>
+        <title>{pageTitle}</title>
         <meta
           name="description"
           content="Hey, I'm durpyneko. Welcome to my site!"

@@ -5,10 +5,15 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Chakra
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../lib/theme";
+import theme from "@/lib/theme";
+
+// Components
+import Navbar from "@/components/Navbar";
+import KofiButton from "@/components/KofiButton";
 
 // CSS
-import "../styles/globals.css";
+import "@/styles/globals.css";
+import Header from "@/components/Header";
 
 const helloConsole = [
   "color: purple",
@@ -29,9 +34,12 @@ if (typeof window !== "undefined") {
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Header />
       <Analytics />
       <SpeedInsights />
+      <Navbar />
+      <Component {...pageProps} />
+      <KofiButton />
     </ChakraProvider>
   );
 }
