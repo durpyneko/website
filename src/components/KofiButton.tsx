@@ -9,7 +9,7 @@ export default function KofiButton() {
         right="4"
         cursor="pointer"
         transition="transform 0.2s"
-        _hover={{ transform: "scale(1.1)" }}
+        _hover={{ transform: "scale(1.1) rotate(15deg)" }}
       >
         <Image
           src="ko-fi_logo.png"
