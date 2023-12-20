@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 // Chakra
 import { Box, Center, Flex, Icon, Link, Text } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
 // Icons
 import { FiGithub } from "react-icons/fi";
