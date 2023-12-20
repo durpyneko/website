@@ -10,7 +10,7 @@ import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 // Icons
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaTwitch } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiAnilist, SiKofi } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
@@ -26,6 +26,10 @@ export default function SocialsContent() {
             href={"https://bsky.app/profile/durpy.assassin.dev"}
           />
           <SocialsButton icon={FaDiscord} href={"durpyneko"} />
+          <SocialsButton
+            icon={FaTwitch}
+            href={"https://www.twitch.tv/durpyneko"}
+          />
           <SocialsButton
             icon={FaGithub}
             href={"https://github.com/durpyneko"}

@@ -21,7 +21,7 @@ export default function SocialsButton({
 
     if (websiteNameMatch && websiteNameMatch[2]) {
       const websiteName = websiteNameMatch[2].replace(
-        /\.(com|co|org|net|gov|edu|io|app)$/,
+        /\.(com|co|org|net|gov|edu|io|app|tv)$/,
         ""
       );
 
