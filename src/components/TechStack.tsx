@@ -14,6 +14,7 @@ export default function TechStack() {
         <TechStackIcon icon="https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white" />
         <TechStackIcon icon="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
         <TechStackIcon icon="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" />
+        <TechStackIcon icon="https://img.shields.io/badge/chakra-%234ED1C5.svg?style=for-the-badge&logo=chakraui&logoColor=white" />
         <TechStackIcon icon="https://img.shields.io/badge/tauri-%2324C8DB.svg?style=for-the-badge&logo=tauri&logoColor=%23FFFFFF" />
       </HStack>
     </Box>
