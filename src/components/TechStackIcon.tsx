@@ -8,7 +8,7 @@ interface TechStackIconProps {
 
 export default function TechStackIcon({ icon }: TechStackIconProps) {
   return (
-    <Box maxH={"30px"}>
+    <Box>
       <Image src={icon} />
     </Box>
   );
