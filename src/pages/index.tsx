@@ -87,7 +87,7 @@ export default function Index() {
                 </Text>
               </HStack>
               <Text>• DnB, Breakcore</Text>
-              <Text>• Metal, Djent</Text>
+              <Text>• Black Metal, Djent</Text>
               <Text>• Techno</Text>
             </Box>
           </Box>
