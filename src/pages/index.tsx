@@ -138,7 +138,8 @@ export default function Index() {
               <Text>• Techno</Text>
             </Box>
           </Box>
-          <Box pt={"20px"}>
+          <Box pt={"20px"} ml={"10px"}>
+            <Text>Currently playing</Text>
             <SpotifyBox
               cover={cover}
               title={title}
