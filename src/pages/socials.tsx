@@ -12,7 +12,7 @@ const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 // Icons
 import { FaDiscord, FaTwitch, FaTwitter } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { SiAnilist, SiKofi } from "react-icons/si";
+import { SiAnilist } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
 
 export default function SocialsContent() {
@@ -46,7 +46,6 @@ export default function SocialsContent() {
             icon={FaSteam}
             href={"https://steamcommunity.com/id/durpyneko/"}
           />
-          <SocialsButton icon={SiKofi} href={"https://ko-fi.com/durpyneko"} />
         </VStack>
       </Center>
     </>
