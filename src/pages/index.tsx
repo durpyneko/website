@@ -12,11 +12,15 @@ import TechStack from "@/components/TechStack";
 import fetcher from "@/lib/fetcher";
 
 // Interface
+interface Activity {
+  name: string;
+}
 interface UserData {
   data: {
     discord_user: {
       avatar: string;
     };
+    activities: Activity[];
     spotify: {
       song: string;
       artist: string;
@@ -43,6 +47,7 @@ export default function Index() {
   const [track_id, setTrack_id] = useState<string>("loading...");
   const [dc_status, setDc_status] = useState<string>("loading...");
   const [avatar, setAvatar] = useState<string>("loading...");
+  const [activities, setActivities] = useState<string[] | null>(null);
 
   const { data, error } = useSWR<UserData>(
     "https://api.lanyard.rest/v1/users/763864687481323620",
@@ -61,6 +66,11 @@ export default function Index() {
       setTrack_id(data.data.spotify?.track_id);
       setDc_status(data.data.discord_status);
       setAvatar(data.data.discord_user.avatar);
+      const otherActivities = data.data.activities
+        ?.filter((activity) => activity.name !== "Spotify")
+        .map((activity) => activity.name || "No activity");
+
+      setActivities(otherActivities);
     }
   }, [data]);
 
@@ -138,15 +148,51 @@ export default function Index() {
               <Text>• Techno</Text>
             </Box>
           </Box>
-          <Box pt={"20px"} ml={"10px"}>
-            <Text>Currently playing</Text>
-            <SpotifyBox
-              cover={cover}
-              title={title}
-              artist={artist}
-              track_id={track_id}
-            />
-          </Box>
+          <Flex mt={"20px"} direction={{ base: "column", md: "row" }}>
+            <Box pt={{ base: "20px", md: "0" }} ml={{ base: "0", md: "10px" }}>
+              {cover && title && artist && track_id && (
+                <Box>
+                  <Text>Listening to:</Text>
+                  <SpotifyBox
+                    cover={cover}
+                    title={title}
+                    artist={artist}
+                    track_id={track_id}
+                  />
+                </Box>
+              )}
+            </Box>
+            <Box pt={{ base: "20px", md: "0" }} ml={{ base: "0", md: "10px" }}>
+              <Text>Activities:</Text>
+              {activities && activities.length > 1 ? (
+                activities.map((activity, index) => (
+                  <Box
+                    key={index}
+                    p={"10px"}
+                    bgColor="#332e45"
+                    width={{ base: "80vw", md: "360px" }}
+                    maxW={{ base: "80vw", md: "360px" }}
+                    borderTopRadius={index === 0 ? "8px" : "0px"}
+                    borderBottomRadius={
+                      index === activities.length - 1 ? "8px" : "0px"
+                    }
+                  >
+                    <Text>{activity}</Text>
+                  </Box>
+                ))
+              ) : (
+                <Box
+                  p={"10px"}
+                  bgColor="#332e45"
+                  width={{ base: "80vw", md: "360px" }}
+                  maxW={{ base: "80vw", md: "360px" }}
+                  borderRadius="8px"
+                >
+                  <Text>{activities}</Text>
+                </Box>
+              )}
+            </Box>
+          </Flex>
         </Box>
       </Center>
     </>
