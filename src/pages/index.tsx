@@ -112,7 +112,7 @@ export default function Index() {
           >
             <Text fontSize={"md"} p={"20px"}>
               {
-                "Welcome to my site! I like to play video games and program in my freetime. I mostly program in JavaScript/Typescript and know a little how Rust works. I have a good understanding of Python."
+                "Welcome to my site! I am a frontend and software developer in my freetime."
               }
             </Text>
           </Flex>
