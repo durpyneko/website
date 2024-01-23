@@ -148,7 +148,10 @@ export default function Index() {
               <Text>• Techno</Text>
             </Box>
           </Box>
-          <Flex mt={"20px"} direction={{ base: "column", md: "row" }}>
+          <Flex
+            mt={{ base: "10px", md: "20px" }}
+            direction={{ base: "column", md: "row" }}
+          >
             <Box pt={{ base: "20px", md: "0" }} ml={{ base: "0", md: "10px" }}>
               {cover && title && artist && track_id && (
                 <Box>
@@ -162,10 +165,13 @@ export default function Index() {
                 </Box>
               )}
             </Box>
-            <Box pt={{ base: "20px", md: "0" }} ml={{ base: "0", md: "10px" }}>
-              <Text>Activities:</Text>
-              {activities && activities.length > 1 ? (
-                activities.map((activity, index) => (
+            {activities && activities.length > 0 && (
+              <Box
+                pt={{ base: "20px", md: "0" }}
+                ml={{ base: "0", md: "10px" }}
+              >
+                <Text>Activities:</Text>
+                {activities.map((activity, index) => (
                   <Box
                     key={index}
                     p={"10px"}
@@ -179,19 +185,9 @@ export default function Index() {
                   >
                     <Text>{activity}</Text>
                   </Box>
-                ))
-              ) : (
-                <Box
-                  p={"10px"}
-                  bgColor="#332e45"
-                  width={{ base: "80vw", md: "360px" }}
-                  maxW={{ base: "80vw", md: "360px" }}
-                  borderRadius="8px"
-                >
-                  <Text>{activities}</Text>
-                </Box>
-              )}
-            </Box>
+                ))}
+              </Box>
+            )}
           </Flex>
         </Box>
       </Center>
