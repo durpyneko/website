@@ -110,7 +110,6 @@ export default function Index() {
                 }
               />
             </Avatar>
-
             <Text fontSize="3xl">
               Hey, I'm{" "}
               <Text
