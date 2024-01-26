@@ -2,7 +2,16 @@ import { useState, useEffect } from "react";
 import useSWR from "swr";
 
 // Chakra
-import { Box, Center, Text, HStack, Image, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Text,
+  HStack,
+  Image,
+  Flex,
+  Avatar,
+  AvatarBadge,
+} from "@chakra-ui/react";
 
 // Components
 import Header from "@/components/Header";
@@ -84,17 +93,24 @@ export default function Index() {
           className={`${JetBrainsMono.className}`}
         >
           <HStack>
-            <Image
-              style={{ borderRadius: "50%" }}
-              src={
-                "https://cdn.discordapp.com/avatars/763864687481323620/" +
-                avatar +
-                ".png?size=1024"
-              }
-              boxSize={"55px"}
-              placeholder="blur"
-              loading="lazy"
-            />
+            <Avatar
+              size="md"
+              src={`https://cdn.discordapp.com/avatars/763864687481323620/${avatar}.png?size=1024`}
+            >
+              <AvatarBadge
+                boxSize="1em"
+                bg={
+                  dc_status === "online"
+                    ? "green.400"
+                    : dc_status === "idle"
+                    ? "yellow.400"
+                    : dc_status === "dnd"
+                    ? "red.400"
+                    : "gray.400"
+                }
+              />
+            </Avatar>
+
             <Text fontSize="3xl">
               Hey, I'm{" "}
               <Text
@@ -111,7 +127,6 @@ export default function Index() {
               </Text>
               !
             </Text>
-            <Text fontSize="xl">{dc_status}</Text>
           </HStack>
           <Flex
             maxW={"6xl"}
