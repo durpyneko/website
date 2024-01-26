@@ -29,7 +29,7 @@ export default function SpotifyBox({
         <>
           <Image
             src={cover}
-            alt="spotify"
+            loading="eager"
             width="60px"
             height="60px"
             borderRadius="50%"
