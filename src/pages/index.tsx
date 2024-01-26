@@ -50,12 +50,12 @@ import SpotifyBox from "@/components/SpotifyBox";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Index() {
-  const [title, setTitle] = useState<string>("loading...");
-  const [artist, setArtist] = useState<string>("loading...");
-  const [cover, setCover] = useState<string>("loading...");
-  const [track_id, setTrack_id] = useState<string>("loading...");
-  const [dc_status, setDc_status] = useState<string>("loading...");
-  const [avatar, setAvatar] = useState<string>("loading...");
+  const [title, setTitle] = useState<string | null>(null);
+  const [artist, setArtist] = useState<string | null>(null);
+  const [cover, setCover] = useState<string | null>(null);
+  const [track_id, setTrack_id] = useState<string | null>(null);
+  const [dc_status, setDc_status] = useState<string | null>(null);
+  const [avatar, setAvatar] = useState<string | null>(null);
   const [activities, setActivities] = useState<string[] | null>(null);
 
   const { data, error } = useSWR<UserData>(
