@@ -95,6 +95,7 @@ export default function Index() {
           <HStack>
             <Avatar
               size="md"
+              loading="eager"
               src={`https://cdn.discordapp.com/avatars/763864687481323620/${avatar}.png?size=1024`}
             >
               <AvatarBadge
