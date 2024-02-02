@@ -23,6 +23,9 @@ import fetcher from "@/lib/fetcher";
 // Interface
 interface Activity {
   name: string;
+  timestamps: {
+    start: number;
+  };
 }
 interface UserData {
   data: {
@@ -56,7 +59,8 @@ export default function Index() {
   const [track_id, setTrack_id] = useState<string | null>(null);
   const [dc_status, setDc_status] = useState<string | null>(null);
   const [avatar, setAvatar] = useState<string | null>(null);
-  const [activities, setActivities] = useState<string[] | null>(null);
+  const [activities, setActivities] = useState<any | null>(null);
+  const [time, setTime] = useState<any | null>(null);
 
   const { data, error } = useSWR<UserData>(
     "https://api.lanyard.rest/v1/users/763864687481323620",
@@ -67,19 +71,52 @@ export default function Index() {
     }
   );
 
+  function convertTime(time: number) {
+    const date = new Date(time);
+    const hours = date.getUTCHours().toString().padStart(2, "0");
+    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+    const seconds = date.getUTCSeconds().toString().padStart(2, "0");
+    return `${hours}:${minutes}:${seconds}`;
+  }
+
   useEffect(() => {
     if (data) {
-      setTitle(data.data.spotify?.song);
-      setArtist(data.data.spotify?.artist);
-      setCover(data.data.spotify?.album_art_url);
-      setTrack_id(data.data.spotify?.track_id);
-      setDc_status(data.data.discord_status);
-      setAvatar(data.data.discord_user.avatar);
-      const otherActivities = data.data.activities
+      const { spotify, discord_status, discord_user, activities } = data.data;
+
+      setTitle(spotify?.song);
+      setArtist(spotify?.artist);
+      setCover(spotify?.album_art_url);
+      setTrack_id(spotify?.track_id);
+      setDc_status(discord_status);
+      setAvatar(discord_user.avatar);
+
+      const otherActivities = activities
         ?.filter((activity) => activity.name !== "Spotify")
-        .map((activity) => activity.name || "No activity");
+        .map(({ name, timestamps }: any) => ({
+          name: name || "No activity",
+          startTimestamp:
+            typeof timestamps.start === "string"
+              ? parseInt(timestamps.start)
+              : timestamps.start || 0,
+        }));
 
       setActivities(otherActivities);
+
+      const updateTimes = () => {
+        const now = new Date();
+        const updatedTimes = otherActivities.map((activity) =>
+          convertTime(now.getTime() - activity.startTimestamp)
+        );
+        setTime(updatedTimes);
+      };
+
+      // initial update
+      updateTimes();
+
+      // set interval to update every second
+      const intervalId = setInterval(updateTimes, 1000);
+
+      return () => clearInterval(intervalId);
     }
   }, [data]);
 
@@ -151,7 +188,7 @@ export default function Index() {
               </HStack>
               <TechStack />
             </Box>
-            <Box mt={"10px"}>
+            <Box mt={"12px"}>
               <HStack>
                 <Text as={FaMusic} fontSize={"lg"}></Text>
                 <Text fontSize={"2xl"} as={"u"}>
@@ -161,6 +198,7 @@ export default function Index() {
               <Text>• Black Metal, Djent</Text>
               <Text>• DnB, Breakcore</Text>
               <Text>• Techno</Text>
+              <Text>• J-Pop</Text>
             </Box>
           </Box>
           <Flex
@@ -180,13 +218,13 @@ export default function Index() {
                 </Box>
               )}
             </Box>
-            {activities && activities.length > 0 && (
+            {activities && activities.length > 0 && time && (
               <Box
                 pt={{ base: "20px", md: "0" }}
                 ml={{ base: "0", md: "10px" }}
               >
                 <Text>Activities:</Text>
-                {activities.map((activity, index) => (
+                {activities.map(({ name }: any, index: number) => (
                   <Box
                     key={index}
                     p={"10px"}
@@ -198,7 +236,9 @@ export default function Index() {
                       index === activities.length - 1 ? "8px" : "0px"
                     }
                   >
-                    <Text>{activity}</Text>
+                    <Text>
+                      {name} - {time[index]}
+                    </Text>
                   </Box>
                 ))}
               </Box>
