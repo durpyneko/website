@@ -14,6 +14,7 @@ import { FaDiscord, FaTwitch, FaTwitter } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiAnilist } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
+import { PiButterflyFill } from "react-icons/pi";
 
 export default function SocialsContent() {
   return (
@@ -22,8 +23,8 @@ export default function SocialsContent() {
       <Center className={`${JetBrainsMono.className}`} p={"40px"}>
         <VStack>
           <SocialsButton
-            icon={""}
-            href={"https://bsky.app/profile/durpy.assassin.dev"}
+            icon={PiButterflyFill}
+            href={"https://bsky.app/profile/durpy.dev"}
           />
           <SocialsButton
             icon={FaTwitter}
