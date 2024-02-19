@@ -29,3 +29,27 @@
         background: #574b7d;
     }
 }
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideDown2 {
+    0% {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

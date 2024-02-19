@@ -20,7 +20,7 @@ export default function SocialsContent() {
   return (
     <>
       <Header header="Socials" />
-      <Center className={`${JetBrainsMono.className}`} p={"40px"}>
+      <Center className={`${JetBrainsMono.className}`} p={"20px"}>
         <VStack>
           <SocialsButton
             icon={PiButterflyFill}

@@ -21,7 +21,7 @@ export default function SocialsButton({
 
     if (websiteNameMatch && websiteNameMatch[2]) {
       const websiteName = websiteNameMatch[2].replace(
-        /\.(com|co|org|net|gov|edu|io|app|tv)$/,
+        /\.(com|co|app|net|tv)$/,
         ""
       );
 
@@ -35,34 +35,40 @@ export default function SocialsButton({
   }, [href]);
   return (
     <>
-      <Link
-        href={href}
-        target={"_blank"}
-        _hover={{ textDecoration: "none", color: "#443d5c" }}
+      <Box
+        css={{
+          animation: "slideDown 0.2s ease-in-out",
+        }}
       >
-        <Box
-          w={{ base: "280px", md: "440px" }} // Set to 280px on smaller screens
-          h={"60px"}
-          p={"10px"}
-          backgroundColor={"#6b6091"}
-          borderRadius={"25px"}
-          title={siteTitle}
+        <Link
+          href={href}
+          target={"_blank"}
+          _hover={{ textDecoration: "none", color: "#443d5c" }}
         >
-          <Center h="100%">
-            <HStack>
-              <Icon boxSize={"6"} as={icon} />
-              <Text>{siteTitle}</Text>
-            </HStack>
-          </Center>
-        </Box>
-        <Icon
-          boxSize={"6"}
-          float={"right"}
-          marginTop={"-42"}
-          marginRight={"5"}
-          as={FiExternalLink}
-        />
-      </Link>
+          <Box
+            w={{ base: "280px", md: "440px" }} // Set to 280px on smaller screens
+            h={"60px"}
+            p={"10px"}
+            backgroundColor={"#6b6091"}
+            borderRadius={"25px"}
+            title={siteTitle}
+          >
+            <Center h="100%">
+              <HStack>
+                <Icon boxSize={"6"} as={icon} />
+                <Text>{siteTitle}</Text>
+              </HStack>
+            </Center>
+          </Box>
+          <Icon
+            boxSize={"6"}
+            float={"right"}
+            marginTop={"-42"}
+            marginRight={"5"}
+            as={FiExternalLink}
+          />
+        </Link>
+      </Box>
     </>
   );
 }

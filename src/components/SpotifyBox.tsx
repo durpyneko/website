@@ -1,12 +1,12 @@
-// Chakra
 import { Box, Image, VStack, Text, Link } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
-// Interface
 interface SpotifyBoxProps {
   cover: string;
   title: string;
   artist: string;
   track_id: string;
+  timestamps: { start: number; end: number };
 }
 
 export default function SpotifyBox({
@@ -14,7 +14,25 @@ export default function SpotifyBox({
   title,
   artist,
   track_id,
+  timestamps,
 }: SpotifyBoxProps) {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const now = Date.now();
+      const duration = timestamps?.end - timestamps?.start;
+      const elapsed = now - timestamps?.start;
+      if (duration && elapsed >= 0 && elapsed <= duration) {
+        setProgress((elapsed / duration) * 100);
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [timestamps]);
+
   return (
     <Box
       backgroundColor="#332e45"
@@ -22,38 +40,60 @@ export default function SpotifyBox({
       maxW={{ base: "80vw", md: "360px" }}
       borderRadius="8px"
       display="flex"
-      alignItems="center"
-      padding="10px"
+      flexDirection="column"
+      overflow="hidden"
+      position="relative"
     >
-      {cover ? (
-        <>
+      <Box
+        display="flex"
+        alignItems="center"
+        padding="10px"
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        {cover && (
           <Image
             src={cover}
-            loading="eager"
             width="60px"
             height="60px"
             borderRadius="50%"
             objectFit="cover"
+            mr={{ base: 0, md: "10px" }}
+            mb={{ base: "10px", md: 0 }}
           />
-          <VStack marginLeft="10px" alignItems="flex-start">
-            <Link
-              href={"https://open.spotify.com/track/" + track_id}
-              target={"_blank"}
-            >
-              <Text fontSize="16px" fontWeight="bold" noOfLines={1}>
-                {title}
-              </Text>
-            </Link>
-            <Text fontSize="14px" noOfLines={1}>
-              {artist}
+        )}
+        <VStack alignItems={{ base: "center", md: "flex-start" }}>
+          <Link
+            href={"https://open.spotify.com/track/" + track_id}
+            target={"_blank"}
+          >
+            <Text fontSize="16px" fontWeight="bold" noOfLines={1}>
+              {title}
             </Text>
-          </VStack>
-        </>
-      ) : (
-        <Text fontSize="16px" color="white">
-          Nothing is currently playing
-        </Text>
-      )}
+          </Link>
+          <Text fontSize="14px" noOfLines={1}>
+            {artist}
+          </Text>
+        </VStack>
+      </Box>
+      <Box
+        backgroundColor="#332e45"
+        height="4px"
+        width="100%"
+        borderRadius="4px"
+        overflow="hidden"
+        position="relative"
+      >
+        <Box
+          backgroundColor="#5a4b81"
+          height="100%"
+          width={`${progress}%`}
+          borderRadius="4px"
+          transition="width 0.2s"
+          position="absolute"
+          left="0"
+          bottom="0"
+        />
+      </Box>
     </Box>
   );
 }

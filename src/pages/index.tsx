@@ -16,6 +16,7 @@ import {
 // Components
 import Header from "@/components/Header";
 import TechStack from "@/components/TechStack";
+import SpotifyBox from "@/components/SpotifyBox";
 
 // Lib
 import fetcher from "@/lib/fetcher";
@@ -38,6 +39,10 @@ interface UserData {
       artist: string;
       album_art_url: string;
       track_id: string;
+      timestamps: {
+        start: number;
+        end: number;
+      };
     };
     discord_status: string;
   };
@@ -49,7 +54,6 @@ import { LuCode2 } from "react-icons/lu";
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
-import SpotifyBox from "@/components/SpotifyBox";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Index() {
@@ -57,6 +61,7 @@ export default function Index() {
   const [artist, setArtist] = useState<string | null>(null);
   const [cover, setCover] = useState<string | null>(null);
   const [track_id, setTrack_id] = useState<string | null>(null);
+  const [timestamps, setTimestamps] = useState<any>(null);
   const [dc_status, setDc_status] = useState<string | null>(null);
   const [avatar, setAvatar] = useState<string | null>(null);
   const [activities, setActivities] = useState<any | null>(null);
@@ -87,6 +92,7 @@ export default function Index() {
       setArtist(spotify?.artist);
       setCover(spotify?.album_art_url);
       setTrack_id(spotify?.track_id);
+      setTimestamps(spotify?.timestamps);
       setDc_status(discord_status);
       setAvatar(discord_user.avatar);
 
@@ -128,11 +134,13 @@ export default function Index() {
           w={{ base: "100vw", md: "70vw" }}
           p={"20px"}
           className={`${JetBrainsMono.className}`}
+          css={{
+            animation: "slideDown2 0.2s ease-in-out",
+          }}
         >
           <HStack>
             <Avatar
               size="md"
-              loading="eager"
               src={`https://cdn.discordapp.com/avatars/763864687481323620/${avatar}.png?size=1024`}
             >
               <AvatarBadge
@@ -195,7 +203,7 @@ export default function Index() {
                   Music
                 </Text>
               </HStack>
-              <Text>• Black Metal, Djent</Text>
+              <Text>• J-Metal/Rock, Metal, Djent</Text>
               <Text>• DnB, Breakcore</Text>
               <Text>• Techno</Text>
               <Text>• J-Pop</Text>
@@ -204,6 +212,7 @@ export default function Index() {
           <Flex
             mt={{ base: "10px", md: "20px" }}
             direction={{ base: "column", md: "row" }}
+            justifyContent={"center"}
           >
             <Box pt={{ base: "20px", md: "0" }} ml={{ base: "0", md: "10px" }}>
               {cover && title && artist && track_id && (
@@ -214,6 +223,7 @@ export default function Index() {
                     title={title}
                     artist={artist}
                     track_id={track_id}
+                    timestamps={timestamps}
                   />
                 </Box>
               )}

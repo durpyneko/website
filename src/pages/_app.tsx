@@ -31,6 +31,10 @@ if (typeof window !== "undefined") {
   });
 }
 
+// Font
+import { JetBrains_Mono } from "next/font/google";
+const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
@@ -38,7 +42,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Analytics />
       <SpeedInsights />
       <Navbar />
-      <Component {...pageProps} />
+      <Component {...pageProps} className={`${JetBrainsMono.className}`} />
       <KofiButton />
     </ChakraProvider>
   );

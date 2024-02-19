@@ -31,6 +31,9 @@ export default function ProjectsBox({
           backgroundColor={"#6b6091"}
           borderRadius={"25px"}
           padding={"20px"}
+          css={{
+            animation: "slideDown2 0.2s ease",
+          }}
         >
           <Center h={"100%"}>
             <VStack>
