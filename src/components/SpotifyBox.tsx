@@ -48,7 +48,7 @@ export default function SpotifyBox({
         display="flex"
         alignItems="center"
         padding="10px"
-        flexDirection={{ base: "column", md: "row" }}
+        flexDirection={"row"}
       >
         {cover && (
           <Image
@@ -57,11 +57,11 @@ export default function SpotifyBox({
             height="60px"
             borderRadius="50%"
             objectFit="cover"
-            mr={{ base: 0, md: "10px" }}
-            mb={{ base: "10px", md: 0 }}
+            mr={"10px"}
+            mb={"10px"}
           />
         )}
-        <VStack alignItems={{ base: "center", md: "flex-start" }}>
+        <VStack alignItems={"flex-start"}>
           <Link
             href={"https://open.spotify.com/track/" + track_id}
             target={"_blank"}
