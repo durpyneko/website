@@ -241,6 +241,7 @@ export default function Index() {
                     bgColor="#332e45"
                     width={{ base: "80vw", md: "360px" }}
                     maxW={{ base: "80vw", md: "360px" }}
+                    height={"47px"}
                     borderTopRadius={index === 0 ? "8px" : "0px"}
                     borderBottomRadius={
                       index === activities.length - 1 ? "8px" : "0px"
