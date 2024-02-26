@@ -10,6 +10,7 @@ import theme from "@/lib/theme";
 // Components
 import Navbar from "@/components/Navbar";
 import KofiButton from "@/components/KofiButton";
+import Footer from "@/components/Footer";
 
 // CSS
 import "@/styles/globals.css";
@@ -44,6 +45,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Component {...pageProps} className={`${JetBrainsMono.className}`} />
       <KofiButton />
+      <Footer />
     </ChakraProvider>
   );
 }
