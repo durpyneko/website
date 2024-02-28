@@ -29,14 +29,14 @@ export default function Footer() {
   return (
     <Box
       position="fixed"
-      bottom="2"
+      bottom="0"
       width="100%"
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
     >
       <Center>
-        <Text>
+        <Text bg={"#332e45"} borderTopRadius={10} px={3} py={1}>
           <Box as={"span"} mr={2}>
             &#169; durpyneko {date.getFullYear()}
           </Box>
