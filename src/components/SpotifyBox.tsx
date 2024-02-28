@@ -55,13 +55,13 @@ export default function SpotifyBox({
             src={cover}
             width="60px"
             height="60px"
-            borderRadius="50%"
+            borderRadius="10%"
             objectFit="cover"
             mr={"10px"}
             mb={"10px"}
           />
         )}
-        <VStack alignItems={"flex-start"}>
+        <VStack alignItems={"flex-start"} mt={"-10px"}>
           <Link
             href={"https://open.spotify.com/track/" + track_id}
             target={"_blank"}
@@ -70,7 +70,7 @@ export default function SpotifyBox({
               {title}
             </Text>
           </Link>
-          <Text fontSize="14px" noOfLines={1}>
+          <Text fontSize="14px" noOfLines={1} mt={"-10px"}>
             {artist}
           </Text>
         </VStack>
