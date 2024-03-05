@@ -32,7 +32,8 @@ export default function Projects() {
             <ProjectsBox
               title={"Website"}
               href={"https://github.com/durpyneko/website"}
-              image={"/project_thumnails/website.png"}
+              github=""
+              image={"/project_thumbnails/website.png"}
               description={"Personal website and portfolio"}
             />
           </GridItem>
@@ -40,15 +41,26 @@ export default function Projects() {
             <ProjectsBox
               title={"neko logger"}
               href={"https://github.com/durpyneko/neko-logger"}
-              image={"/project_thumnails/neko-logger.png"}
+              github=""
+              image={"/project_thumbnails/neko-logger.png"}
               description={"a custom javascript console logger"}
             />
           </GridItem>
           <GridItem>
             <ProjectsBox
+              title={"Kikuri web"}
+              href={"https://kikuri.durpy.dev"}
+              github="https://github.com/durpyneko/kikuri-web"
+              image={"/project_thumbnails/kikuri-web.png"}
+              description={"a website of / for Hiroi Kikuri"}
+            />
+          </GridItem>
+          <GridItem>
+            <ProjectsBox
               title={"imisssaru"}
-              href={"https://github.com/durpyneko/imisssaru"}
-              image={"/project_thumnails/imisssaru.png"}
+              href={"https://imisssaru.vercel.app"}
+              github={"https://github.com/durpyneko/imisssaru"}
+              image={"/project_thumbnails/imisssaru.png"}
               description={"imisssaru inspired by imissfauna"}
             />
           </GridItem>
