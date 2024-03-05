@@ -1,4 +1,4 @@
-// Chakra Imports
+// Chakra
 import {
   Box,
   Center,
@@ -6,22 +6,28 @@ import {
   Link,
   VStack,
   Image,
-  Icon,
   HStack,
 } from "@chakra-ui/react";
-import { FiExternalLink } from "react-icons/fi";
+
+// Icons
+import { FaGithub } from "react-icons/fa";
+
+// Interface
+interface ProjectsBoxProps {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+  github: string;
+}
 
 export default function ProjectsBox({
   title,
   description,
   href,
   image,
-}: {
-  title: any;
-  description: any;
-  href: any;
-  image: any;
-}) {
+  github,
+}: ProjectsBoxProps) {
   return (
     <>
       <Center p={"20px"}>
@@ -45,7 +51,7 @@ export default function ProjectsBox({
                 placeholder="blur"
                 loading="lazy"
               />
-              <HStack>
+              <HStack alignItems="center">
                 <Link
                   href={href}
                   target={"_blank"}
@@ -57,9 +63,13 @@ export default function ProjectsBox({
                     borderColor={"#443d5c"}
                   >
                     {title}
-                    <Icon as={FiExternalLink} />
                   </Text>
                 </Link>
+                {github && (
+                  <Link href={github} target="_blank">
+                    <FaGithub />
+                  </Link>
+                )}
               </HStack>
               <Text fontSize={{ base: "md", md: "1xl" }}>{description}</Text>
             </VStack>
