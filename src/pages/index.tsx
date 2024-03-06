@@ -7,7 +7,6 @@ import {
   Center,
   Text,
   HStack,
-  Image,
   Flex,
   Avatar,
   AvatarBadge,
@@ -182,7 +181,7 @@ export default function Index() {
           >
             <Text fontSize={"md"} p={"20px"}>
               {
-                "Welcome to my site! I am a frontend and software developer in my freetime."
+                "Welcome to my site! I am a frontend and software developer in my free time."
               }
             </Text>
           </Flex>
@@ -209,52 +208,57 @@ export default function Index() {
               <Text>• J-Pop</Text>
             </Box>
           </Box>
-          <Flex
-            mt={{ base: "10px", md: "20px" }}
-            direction={{ base: "column", md: "row" }}
-            justifyContent={"center"}
-          >
-            <Box pt={{ base: "20px", md: "0" }} ml={{ base: "0", md: "10px" }}>
-              {cover && title && artist && track_id && (
-                <Box>
-                  <Text>Listening to:</Text>
-                  <SpotifyBox
-                    cover={cover}
-                    title={title}
-                    artist={artist}
-                    track_id={track_id}
-                    timestamps={timestamps}
-                  />
-                </Box>
-              )}
-            </Box>
-            {activities && activities.length > 0 && time && (
+          <Center>
+            <Flex
+              mt={{ base: "10px", md: "20px" }}
+              direction={{ base: "column", md: "row" }}
+              justifyContent={"center"}
+            >
               <Box
                 pt={{ base: "20px", md: "0" }}
                 ml={{ base: "0", md: "10px" }}
               >
-                <Text>Activities:</Text>
-                {activities.map(({ name }: any, index: number) => (
-                  <Box
-                    key={index}
-                    p={"10px"}
-                    bgColor="#332e45"
-                    width={{ base: "80vw", md: "360px" }}
-                    maxW={{ base: "80vw", md: "360px" }}
-                    height={"47px"}
-                    borderTopRadius={index === 0 ? "8px" : "0px"}
-                    borderBottomRadius={
-                      index === activities.length - 1 ? "8px" : "0px"
-                    }
-                  >
-                    <Text>
-                      {name} - {time[index]}
-                    </Text>
+                {cover && title && artist && track_id && (
+                  <Box>
+                    <Text>Listening to:</Text>
+                    <SpotifyBox
+                      cover={cover}
+                      title={title}
+                      artist={artist}
+                      track_id={track_id}
+                      timestamps={timestamps}
+                    />
                   </Box>
-                ))}
+                )}
               </Box>
-            )}
-          </Flex>
+              {activities && (
+                <Box
+                  pt={{ base: "20px", md: "0" }}
+                  ml={{ base: "0", md: "10px" }}
+                >
+                  <Text>Activities:</Text>
+                  {activities.map(({ name }: any, index: number) => (
+                    <Box
+                      key={index}
+                      p={"10px"}
+                      bgColor="#332e45"
+                      width={{ base: "80vw", md: "360px" }}
+                      maxW={{ base: "80vw", md: "360px" }}
+                      height={"47px"}
+                      borderTopRadius={index === 0 ? "8px" : "0px"}
+                      borderBottomRadius={
+                        index === activities.length - 1 ? "8px" : "0px"
+                      }
+                    >
+                      <Text>
+                        {name} - {time[index]}
+                      </Text>
+                    </Box>
+                  ))}
+                </Box>
+              )}
+            </Flex>
+          </Center>
         </Box>
       </Center>
     </>
