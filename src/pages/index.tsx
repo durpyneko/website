@@ -231,7 +231,7 @@ export default function Index() {
                   </Box>
                 )}
               </Box>
-              {activities && (
+              {activities && activities.length > 0 && (
                 <Box
                   pt={{ base: "20px", md: "0" }}
                   ml={{ base: "0", md: "10px" }}
