@@ -4,9 +4,6 @@ import { Center, Image, Text, Link, VStack, Icon } from "@chakra-ui/react";
 // Next
 import Head from "next/head";
 
-// Icons
-import { FiExternalLink } from "react-icons/fi";
-
 export default function NotFound() {
   return (
     <>
@@ -16,10 +13,7 @@ export default function NotFound() {
       <Center>
         <VStack>
           <Link href="/">
-            <Text fontSize={"4xl"}>
-              {"<"}Home{">"}
-              <Icon boxSize={"6"} as={FiExternalLink} />
-            </Text>
+            <Text fontSize={"4xl"}>return to home?</Text>
           </Link>
           <Image
             alt="404"
