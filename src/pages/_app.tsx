@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Chakra
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import theme from "@/lib/theme";
 
 // Components
@@ -45,7 +45,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Component {...pageProps} className={`${JetBrainsMono.className}`} />
       <KofiButton />
-      <Footer />
+      <Box pt={10}>
+        <Footer />
+      </Box>
     </ChakraProvider>
   );
 }
