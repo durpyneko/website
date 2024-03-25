@@ -43,7 +43,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Analytics />
       <SpeedInsights />
       <Navbar />
-      <Component {...pageProps} className={`${JetBrainsMono.className}`} />
+      <Box className={JetBrainsMono.className}>
+        <Component {...pageProps} />
+      </Box>
       <KofiButton />
       <Box pt={10}>
         <Footer />
