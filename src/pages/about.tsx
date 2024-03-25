@@ -28,9 +28,9 @@ export default function About() {
               target="_blank"
               textDecor={"underline"}
             >
-              pixelboop.net.
+              pixelboop.net
             </Link>{" "}
-            I have also worked on other projects with{" "}
+            . I have also worked on other projects with{" "}
             <Link
               href="https://assassin.dev/"
               target="_blank"
