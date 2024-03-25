@@ -16,6 +16,7 @@ export default function TechStack() {
         <TechStackIcon icon="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" />
         <TechStackIcon icon="https://img.shields.io/badge/chakra-%234ED1C5.svg?style=for-the-badge&logo=chakraui&logoColor=white" />
         <TechStackIcon icon="https://img.shields.io/badge/tauri-%2324C8DB.svg?style=for-the-badge&logo=tauri&logoColor=%23FFFFFF" />
+        <TechStackIcon icon="https://img.shields.io/badge/GODOT-%23FFFFFF.svg?style=for-the-badge&logo=godot-engine" />
       </HStack>
     </Box>
   );
