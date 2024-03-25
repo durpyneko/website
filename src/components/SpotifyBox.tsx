@@ -73,7 +73,6 @@ export default function SpotifyBox({
             {artist}
           </Text>
         </VStack>
-        DD
       </Box>
       <Box
         backgroundColor="#332e45"
