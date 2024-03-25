@@ -25,7 +25,7 @@ export default function Navbar() {
         textAlign={"center"}
         borderBottomRadius={"25px"}
         bgColor={"#332e45"}
-        className={`${JetBrainsMono.className}`}
+        className={JetBrainsMono.className}
       >
         <Center>
           <Tabs variant={"unstyled"} colorScheme="gray">
@@ -79,6 +79,20 @@ export default function Navbar() {
                   <Text>socials</Text>
                 </Tab>
               </NextLink>
+              <Box w="10px" /> {/* Add space here */}
+              <NextLink href={"/about"}>
+                <Tab
+                  w={"80px"}
+                  _hover={{
+                    color: "#a393dd",
+                    transition: "color 0.2s linear",
+                    cursor: "pointer",
+                  }}
+                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                >
+                  <Text>about</Text>
+                </Tab>
+              </NextLink>
             </TabList>
           </Tabs>
           <Flex
@@ -86,6 +100,7 @@ export default function Navbar() {
             right={"10px"}
             paddingTop={"5px"}
             paddingRight={"5px"}
+            display={{ base: "none", sm: "flex" }}
           >
             <Link href="https://github.com/durpyneko/website" target="_blank">
               <Icon

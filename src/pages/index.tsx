@@ -1,5 +1,9 @@
+// React
 import { useState, useEffect } from "react";
 import useSWR from "swr";
+
+// Next
+import NextLink from "next/link";
 
 // Chakra
 import {
@@ -10,6 +14,8 @@ import {
   Flex,
   Avatar,
   AvatarBadge,
+  Divider,
+  Link,
 } from "@chakra-ui/react";
 
 // Components
@@ -180,9 +186,13 @@ export default function Index() {
             borderRadius={"8px"}
           >
             <Text fontSize={"md"} p={"20px"}>
-              {
-                "Welcome to my site! I am a frontend and software developer in my free time."
-              }
+              Welcome to my site! I am a frontend and software developer in my
+              free time. Expanded{" "}
+              <NextLink href="/about" passHref>
+                <Text as={"span"} textDecor="underline">
+                  here
+                </Text>
+              </NextLink>
             </Text>
           </Flex>
           <Box px={{ base: "0", md: "50px" }}>
@@ -220,7 +230,9 @@ export default function Index() {
               >
                 {cover && title && artist && track_id && (
                   <Box>
-                    <Text>Listening to:</Text>
+                    <Text p={2} borderTopRadius={"8px"} bg={"#332e45"}>
+                      Now playing:
+                    </Text>
                     <SpotifyBox
                       cover={cover}
                       title={title}
@@ -236,7 +248,10 @@ export default function Index() {
                   pt={{ base: "20px", md: "0" }}
                   ml={{ base: "0", md: "10px" }}
                 >
-                  <Text>Activities:</Text>
+                  <Text p={2} borderTopRadius={"8px"} bg={"#332e45"}>
+                    Activities:
+                  </Text>
+                  <Divider bg={"#474257"} />
                   {activities.map(({ name }: any, index: number) => (
                     <Box
                       key={index}
@@ -245,7 +260,7 @@ export default function Index() {
                       width={{ base: "80vw", md: "360px" }}
                       maxW={{ base: "80vw", md: "360px" }}
                       height={"47px"}
-                      borderTopRadius={index === 0 ? "8px" : "0px"}
+                      /* borderTopRadius={index === 0 ? "0px" : "0px"} */
                       borderBottomRadius={
                         index === activities.length - 1 ? "8px" : "0px"
                       }
