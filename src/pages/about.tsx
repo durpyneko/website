@@ -29,7 +29,7 @@ export default function About() {
               textDecor={"underline"}
             >
               pixelboop.net
-            </Link>{" "}
+            </Link>
             . I have also worked on other projects with{" "}
             <Link
               href="https://assassin.dev/"
