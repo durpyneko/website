@@ -1,4 +1,4 @@
-import { Box, Image, VStack, Text, Link } from "@chakra-ui/react";
+import { Box, Image, VStack, Text, Link, Divider } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 interface SpotifyBoxProps {
@@ -38,29 +38,28 @@ export default function SpotifyBox({
       backgroundColor="#332e45"
       width={{ base: "80vw", md: "360px" }}
       maxW={{ base: "80vw", md: "360px" }}
-      borderRadius="8px"
+      borderBottomRadius={"8px"}
       display="flex"
       flexDirection="column"
       overflow="hidden"
       position="relative"
     >
+      <Divider bg={"#474257"} />
       <Box
         display="flex"
         alignItems="center"
         padding="10px"
         flexDirection={"row"}
       >
-        {cover && (
-          <Image
-            src={cover}
-            width="60px"
-            height="60px"
-            borderRadius="10%"
-            objectFit="cover"
-            mr={"10px"}
-            mb={"10px"}
-          />
-        )}
+        <Image
+          src={cover}
+          width="60px"
+          height="60px"
+          borderRadius="10%"
+          objectFit="cover"
+          mr={"10px"}
+          mb={"10px"}
+        />
         <VStack alignItems={"flex-start"} mt={"-10px"}>
           <Link
             href={"https://open.spotify.com/track/" + track_id}
@@ -74,6 +73,7 @@ export default function SpotifyBox({
             {artist}
           </Text>
         </VStack>
+        DD
       </Box>
       <Box
         backgroundColor="#332e45"
