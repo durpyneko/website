@@ -1,10 +1,14 @@
 // Chakra
 import { Box, Center, Text, Checkbox, useTheme, Link } from "@chakra-ui/react";
 
+// Components
+import Header from "@/components/Header";
+
 export default function About() {
   const theme = useTheme();
   return (
     <Box>
+      <Header header="About" />
       <Center>
         <Box w={{ base: "100vw", md: "70vw" }} p={"20px"}>
           <Center>
