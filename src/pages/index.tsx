@@ -230,9 +230,15 @@ export default function Index() {
               >
                 {cover && title && artist && track_id && (
                   <Box>
-                    <Text p={2} borderTopRadius={"8px"} bg={"#332e45"}>
-                      Now playing:
-                    </Text>
+                    <Flex
+                      p={2}
+                      borderTopRadius={"8px"}
+                      justifyContent="space-between"
+                      bg="#332e45"
+                    >
+                      <Text>Now playing</Text>
+                      <Text>—⠀❐⠀⤬</Text>
+                    </Flex>
                     <SpotifyBox
                       cover={cover}
                       title={title}
@@ -248,9 +254,15 @@ export default function Index() {
                   pt={{ base: "20px", md: "0" }}
                   ml={{ base: "0", md: "10px" }}
                 >
-                  <Text p={2} borderTopRadius={"8px"} bg={"#332e45"}>
-                    Activities:
-                  </Text>
+                  <Flex
+                    p={2}
+                    borderTopRadius={"8px"}
+                    justifyContent="space-between"
+                    bg="#332e45"
+                  >
+                    <Text>Activities</Text>
+                    <Text>—⠀❐⠀⤬</Text>
+                  </Flex>
                   <Divider bg={"#474257"} />
                   {activities.map(({ name }: any, index: number) => (
                     <Box
