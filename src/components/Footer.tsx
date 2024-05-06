@@ -28,8 +28,6 @@ export default function Footer() {
 
   return (
     <Box
-      position="fixed"
-      bottom="0"
       width="100%"
       justifyContent="center"
       alignItems="center"
@@ -38,14 +36,14 @@ export default function Footer() {
       <Center>
         <Text
           // do text area only not parent/wrapping div
-          /* borderColor={"#ffffff50"}
+          /*  borderColor={"#ffffff50"}
           borderWidth={"1px"}
           borderBottom={"none"}
-          borderTopRadius={10} */
+          borderTopRadius={10}
+          backdropFilter="blur(20px)" 
+          shadow={"xl"} */
           px={3}
           py={1}
-          backdropBlur={"20px"}
-          shadow={"xl"}
         >
           <Box as={"span"} mr={2}>
             &#169; durpyneko {date.getFullYear()}
