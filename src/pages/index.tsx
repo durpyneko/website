@@ -198,7 +198,7 @@ export default function Index() {
               </NextLink>
             </Text>
           </Flex>
-          <Box px={{ base: "0", md: "50px" }} mt={6}>
+          <Box px={{ base: "0", md: "50px" }} mt={"20px"}>
             <Box>
               <HStack>
                 <Text as={LuCode2} fontSize={"2xl"}></Text>
@@ -208,7 +208,7 @@ export default function Index() {
               </HStack>
               <TechStack />
             </Box>
-            <Box mt={"12px"}>
+            <Box mt={"20px"}>
               <HStack>
                 <Text as={FaMusic} fontSize={"lg"}></Text>
                 <Text fontSize={"2xl"} as={"u"}>
