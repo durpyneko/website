@@ -135,7 +135,7 @@ export default function Index() {
   }, [data]);
 
   return (
-    <>
+    <Box>
       <Header header="Home" />
       <Center>
         <Box
@@ -302,6 +302,6 @@ export default function Index() {
           </Center>
         </Box>
       </Center>
-    </>
+    </Box>
   );
 }

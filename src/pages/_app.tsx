@@ -39,16 +39,21 @@ const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Header />
-      <Analytics />
-      <SpeedInsights />
-      <Navbar />
-      <Box className={JetBrainsMono.className}>
-        <Component {...pageProps} />
-      </Box>
-      <KofiButton />
-      <Box pt={10}>
-        <Footer />
+      <Box
+        height={"100vh"}
+        bgGradient="linear-gradient(to bottom right, #005244, #49063b)"
+      >
+        <Header />
+        <Analytics />
+        <SpeedInsights />
+        <Navbar />
+        <Box className={JetBrainsMono.className}>
+          <Component {...pageProps} />
+        </Box>
+        <KofiButton />
+        <Box pt={10}>
+          <Footer />
+        </Box>
       </Box>
     </ChakraProvider>
   );

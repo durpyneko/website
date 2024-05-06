@@ -27,14 +27,8 @@ const theme = extendTheme({
   },
   styles: {
     global: (props: StyleFunctionProps) => ({
-      html: {
-        height: "100%",
-      },
       body: {
-        bg: "linear-gradient(to bottom right, #005244, #49063b)",
         color: "white",
-        backgroundRepeat: "no-repeat",
-        backdropFilter: "blur(20px)",
       },
     }),
   },
