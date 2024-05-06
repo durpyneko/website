@@ -6,7 +6,11 @@ import Header from "@/components/Header";
 
 export default function About() {
   return (
-    <Box>
+    <Box
+      css={{
+        animation: "slideDown2 0.2s ease-in-out",
+      }}
+    >
       <Header header="About" />
       <Center>
         <Box w={{ base: "100vw", md: "70vw" }} p={"20px"}>
