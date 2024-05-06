@@ -1,4 +1,12 @@
-import { Box, Image, VStack, Text, Link, Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  VStack,
+  Text,
+  Link,
+  Divider,
+  useTheme,
+} from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 interface SpotifyBoxProps {
@@ -16,6 +24,8 @@ export default function SpotifyBox({
   track_id,
   timestamps,
 }: SpotifyBoxProps) {
+  const theme = useTheme();
+
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -35,7 +45,9 @@ export default function SpotifyBox({
 
   return (
     <Box
-      backgroundColor="#332e45"
+      borderColor={"#ffffff50"}
+      borderWidth={"1px"}
+      borderTop={"none"}
       width={{ base: "80vw", md: "360px" }}
       maxW={{ base: "80vw", md: "360px" }}
       borderBottomRadius={"8px"}
@@ -44,7 +56,6 @@ export default function SpotifyBox({
       overflow="hidden"
       position="relative"
     >
-      <Divider bg={"#474257"} />
       <Box
         display="flex"
         alignItems="center"
@@ -75,7 +86,6 @@ export default function SpotifyBox({
         </VStack>
       </Box>
       <Box
-        backgroundColor="#332e45"
         height="4px"
         width="100%"
         borderRadius="4px"
@@ -83,7 +93,7 @@ export default function SpotifyBox({
         position="relative"
       >
         <Box
-          backgroundColor="#5a4b81"
+          backgroundColor={theme.accent.light}
           height="100%"
           width={`${progress}%`}
           borderRadius="4px"

@@ -36,7 +36,17 @@ export default function Footer() {
       flexDirection="column"
     >
       <Center>
-        <Text bg={"#332e45"} borderTopRadius={10} px={3} py={1}>
+        <Text
+          // do text area only not parent/wrapping div
+          /* borderColor={"#ffffff50"}
+          borderWidth={"1px"}
+          borderBottom={"none"}
+          borderTopRadius={10} */
+          px={3}
+          py={1}
+          backdropBlur={"20px"}
+          shadow={"xl"}
+        >
           <Box as={"span"} mr={2}>
             &#169; durpyneko {date.getFullYear()}
           </Box>

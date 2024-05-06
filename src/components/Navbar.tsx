@@ -2,7 +2,15 @@
 import NextLink from "next/link";
 
 // Chakra
-import { Box, Center, Flex, Icon, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Icon,
+  Link,
+  Text,
+  useTheme,
+} from "@chakra-ui/react";
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
 // Icons
@@ -13,6 +21,7 @@ import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Navbar() {
+  const theme = useTheme();
   return (
     <>
       <Box
@@ -24,25 +33,33 @@ export default function Navbar() {
         fontSize={"1.5rem"}
         textAlign={"center"}
         borderBottomRadius={"25px"}
-        bgColor={"#332e45"}
+        bgColor={theme.accent.transparent}
+        // style={{ backdropFilter: "blur(20px)" }}
         className={JetBrainsMono.className}
       >
         <Center>
           <Tabs variant={"unstyled"} colorScheme="gray">
-            <TabList>
+            <TabList
+              _selected={{
+                borderBottom: `${theme.accent.light} 2px solid`,
+              }}
+            >
               <NextLink href={"/"}>
                 <Tab
                   w={"80px"}
                   _hover={{
-                    color: "#a393dd",
+                    color: theme.accent.light,
                     transition: "color 0.2s linear",
                     cursor: "pointer",
                   }}
-                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                  _selected={{
+                    position: "relative",
+                    borderBottom: `${theme.accent.light} 2px solid`,
+                  }}
                 >
                   <Text
                     _hover={{
-                      color: "#a393dd",
+                      color: theme.accent.light,
                       transition: "color 0.2s linear",
                       cursor: "pointer",
                     }}
@@ -56,11 +73,13 @@ export default function Navbar() {
                 <Tab
                   w={"80px"}
                   _hover={{
-                    color: "#a393dd",
+                    color: theme.accent.light,
                     transition: "color 0.2s linear",
                     cursor: "pointer",
                   }}
-                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                  _selected={{
+                    borderBottom: `${theme.accent.light} 2px solid`,
+                  }}
                 >
                   <Text>projects</Text>
                 </Tab>
@@ -70,11 +89,13 @@ export default function Navbar() {
                 <Tab
                   w={"80px"}
                   _hover={{
-                    color: "#a393dd",
+                    color: theme.accent.light,
                     transition: "color 0.2s linear",
                     cursor: "pointer",
                   }}
-                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                  _selected={{
+                    borderBottom: `${theme.accent.light} 2px solid`,
+                  }}
                 >
                   <Text>socials</Text>
                 </Tab>
@@ -84,11 +105,13 @@ export default function Navbar() {
                 <Tab
                   w={"80px"}
                   _hover={{
-                    color: "#a393dd",
+                    color: theme.accent.light,
                     transition: "color 0.2s linear",
                     cursor: "pointer",
                   }}
-                  _selected={{ borderBottom: "#877ab7 2px solid" }}
+                  _selected={{
+                    borderBottom: `${theme.accent.light} 2px solid`,
+                  }}
                 >
                   <Text>about</Text>
                 </Tab>
@@ -106,7 +129,7 @@ export default function Navbar() {
               <Icon
                 as={FiGithub}
                 _hover={{
-                  color: "#a393dd",
+                  color: theme.accent.light,
                   transition: "color 0.2s linear",
                 }}
               ></Icon>

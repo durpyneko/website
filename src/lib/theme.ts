@@ -1,40 +1,43 @@
 // Chackra
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
-import type { StyleFunctionProps } from '@chakra-ui/styled-system'
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
+import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 
 const config: ThemeConfig = {
-  initialColorMode: 'dark',
+  initialColorMode: "dark",
   useSystemColorMode: false,
-}
+};
 
 const theme = extendTheme({
   config,
   colors: {
-    customBackground: '#262626',
-    customButtonBackground: "1d1d1d"
+    accent_light: "#a393dd",
+    accent_backup: "#877ab7",
+    accent_dark: "#332e45",
+    customBackground: "#262626",
+    customButtonBackground: "#1d1d1d",
+  },
+  accent: {
+    light: "#964c9c",
+    default: "#7f4085",
+    dark: "#68346d",
+    bg: "#68346d",
+    divider: "#474257",
+    transparent: "transparent",
   },
   styles: {
     global: (props: StyleFunctionProps) => ({
+      html: {
+        height: "100%",
+      },
       body: {
-        // bg: mode('white', 'black')(props),
-        bg: '#17151f',
-        color: 'white',
+        bg: "linear-gradient(to bottom right, #005244, #49063b)",
+        color: "white",
+        backgroundRepeat: "no-repeat",
+        backdropFilter: "blur(20px)",
       },
     }),
   },
-  components: {
-    /* Button: {
-      // Example
-      baseStyle: (props: StyleFunctionProps) => ({
-        bg: '#1d1d1d', 
-        color: 'white', 
-        _hover: {
-          bg: "#4c4c4c",
-        },
-      }),
-    }, */
-}
-})
+});
 
-export default theme
+export default theme;

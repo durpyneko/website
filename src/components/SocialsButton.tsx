@@ -2,7 +2,15 @@
 import React, { useState, useEffect } from "react";
 
 // Chakra
-import { Box, Center, HStack, Icon, Text, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  HStack,
+  Icon,
+  Text,
+  Link,
+  useTheme,
+} from "@chakra-ui/react";
 
 // Icons
 import { FiExternalLink } from "react-icons/fi";
@@ -14,6 +22,8 @@ export default function SocialsButton({
   icon: any;
   href: any;
 }) {
+  const theme = useTheme();
+
   const [siteTitle, setSiteTitle] = useState();
 
   useEffect(() => {
@@ -43,14 +53,16 @@ export default function SocialsButton({
         <Link
           href={href}
           target={"_blank"}
-          _hover={{ textDecoration: "none", color: "#443d5c" }}
+          _hover={{ textDecoration: "none", color: theme.accent.light }}
         >
           <Box
             w={{ base: "280px", md: "440px" }} // Set to 280px on smaller screens
             h={"60px"}
             p={"10px"}
-            backgroundColor={"#6b6091"}
-            borderRadius={"25px"}
+            borderColor={"#ffffff50"}
+            borderWidth={"1px"}
+            borderRadius={"8px"}
+            shadow={"xl"}
             title={siteTitle}
           >
             <Center h="100%">

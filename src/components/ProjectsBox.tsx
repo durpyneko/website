@@ -7,6 +7,7 @@ import {
   VStack,
   Image,
   HStack,
+  useTheme,
 } from "@chakra-ui/react";
 
 // Icons
@@ -28,15 +29,18 @@ export default function ProjectsBox({
   image,
   github,
 }: ProjectsBoxProps) {
+  const theme = useTheme();
   return (
     <>
       <Center p={"20px"}>
         <Box
           w={{ base: "300px", md: "360px" }} // Set to 300px on smaller screens
           h={{ base: "300px", md: "360px" }}
-          backgroundColor={"#6b6091"}
-          borderRadius={"25px"}
+          borderColor={"#ffffff50"}
+          borderWidth={"1px"}
+          borderRadius={"8px"}
           padding={"20px"}
+          shadow={"xl"}
           css={{
             animation: "slideDown2 0.2s ease",
           }}
@@ -55,12 +59,15 @@ export default function ProjectsBox({
                 <Link
                   href={href}
                   target={"_blank"}
-                  _hover={{ textDecoration: "none", color: "#443d5c" }}
+                  _hover={{
+                    textDecoration: "none",
+                    color: theme.accent.default,
+                  }}
                 >
                   <Text
                     fontSize={{ base: "2xl", md: "1xl" }}
                     borderBottom={"2px"}
-                    borderColor={"#443d5c"}
+                    borderColor={theme.accent.default}
                   >
                     {title}
                   </Text>

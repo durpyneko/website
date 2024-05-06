@@ -16,6 +16,7 @@ import {
   AvatarBadge,
   Divider,
   Link,
+  useTheme,
 } from "@chakra-ui/react";
 
 // Components
@@ -62,6 +63,8 @@ import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Index() {
+  const theme = useTheme();
+
   const [title, setTitle] = useState<string | null>(null);
   const [artist, setArtist] = useState<string | null>(null);
   const [cover, setCover] = useState<string | null>(null);
@@ -136,8 +139,7 @@ export default function Index() {
       <Header header="Home" />
       <Center>
         <Box
-          w={{ base: "100vw", md: "70vw" }}
-          p={"20px"}
+          p={"10px"}
           className={`${JetBrainsMono.className}`}
           css={{
             animation: "slideDown2 0.2s ease-in-out",
@@ -161,15 +163,14 @@ export default function Index() {
                 }
               />
             </Avatar>
-            <Text fontSize="3xl">
+            <Text fontSize="3xl" ml={"8px"}>
               Hey, I'm{" "}
               <Text
                 as="span"
                 className="username-gradient"
-                /* color={"#877ab7"} */
                 fontSize="3xl"
                 _hover={{
-                  borderBottom: "#877ab7 2px solid",
+                  borderBottom: `${theme.accent.light} 2px solid`,
                   transition: "border-bottom 0.08s linear",
                 }}
               >
@@ -182,12 +183,14 @@ export default function Index() {
             maxW={"6xl"}
             p={"2px"}
             margin={"10px"}
-            backgroundColor={"#332e45"}
+            borderColor={"#ffffff50"}
+            borderWidth={"1px"}
             borderRadius={"8px"}
+            shadow={"xl"}
           >
             <Text fontSize={"md"} p={"20px"}>
               Welcome to my site! I am a frontend and software developer in my
-              free time. Expanded{" "}
+              free time. My "favourite" game is War Thunder. Expanded{" "}
               <NextLink href="/about" passHref>
                 <Text as={"span"} textDecor="underline">
                   here
@@ -195,7 +198,7 @@ export default function Index() {
               </NextLink>
             </Text>
           </Flex>
-          <Box px={{ base: "0", md: "50px" }}>
+          <Box px={{ base: "0", md: "50px" }} mt={6}>
             <Box>
               <HStack>
                 <Text as={LuCode2} fontSize={"2xl"}></Text>
@@ -212,29 +215,36 @@ export default function Index() {
                   Music
                 </Text>
               </HStack>
-              <Text>• J-Metal/Rock, Metal, Djent</Text>
-              <Text>• DnB, Breakcore</Text>
-              <Text>• Techno</Text>
-              <Text>• J-Pop</Text>
+              <Box
+                mt={"5px"}
+                p={"10px"}
+                borderColor={"#ffffff50"}
+                borderWidth={"1px"}
+                borderRadius={"8px"}
+                shadow={"xl"}
+              >
+                <Text>• J-Metal/Rock, Metal, Djent</Text>
+                <Text>• DnB, Breakcore</Text>
+                <Text>• Techno</Text>
+                <Text>• J-Pop</Text>
+              </Box>
             </Box>
           </Box>
           <Center>
             <Flex
-              mt={{ base: "10px", md: "20px" }}
+              mt={"20px"}
               direction={{ base: "column", md: "row" }}
               justifyContent={"center"}
             >
-              <Box
-                pt={{ base: "20px", md: "0" }}
-                ml={{ base: "0", md: "10px" }}
-              >
+              <Box shadow={"xl"}>
                 {cover && title && artist && track_id && (
                   <Box>
                     <Flex
                       p={2}
                       borderTopRadius={"8px"}
                       justifyContent="space-between"
-                      bg="#332e45"
+                      borderColor={"#ffffff50"}
+                      borderWidth={"1px"}
                     >
                       <Text>Now playing</Text>
                       <Text>—⠀❐⠀⤬</Text>
@@ -258,21 +268,25 @@ export default function Index() {
                     p={2}
                     borderTopRadius={"8px"}
                     justifyContent="space-between"
-                    bg="#332e45"
+                    borderColor={"#ffffff50"}
+                    borderWidth={"1px"}
+                    borderBottom={"none"}
                   >
                     <Text>Activities</Text>
                     <Text>—⠀❐⠀⤬</Text>
                   </Flex>
-                  <Divider bg={"#474257"} />
+                  <Divider bg={"grey"} />
                   {activities.map(({ name }: any, index: number) => (
                     <Box
                       key={index}
                       p={"10px"}
-                      bgColor="#332e45"
+                      borderColor={"#ffffff50"}
+                      borderWidth={"1px"}
+                      borderTop={"none"}
+                      shadow={"xl"}
                       width={{ base: "80vw", md: "360px" }}
                       maxW={{ base: "80vw", md: "360px" }}
                       height={"47px"}
-                      /* borderTopRadius={index === 0 ? "0px" : "0px"} */
                       borderBottomRadius={
                         index === activities.length - 1 ? "8px" : "0px"
                       }
