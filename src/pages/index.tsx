@@ -55,8 +55,8 @@ interface UserData {
 }
 
 // Icons
-import { FaMusic } from "react-icons/fa";
 import { LuCode2 } from "react-icons/lu";
+import { HiOutlineMusicalNote } from "react-icons/hi2";
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
@@ -201,7 +201,7 @@ export default function Index() {
           <Box px={{ base: "0", md: "50px" }} mt={"20px"}>
             <Box>
               <HStack>
-                <Text as={LuCode2} fontSize={"2xl"}></Text>
+                <Text as={LuCode2} fontSize={"3xl"}></Text>
                 <Text fontSize={"2xl"} as={"u"}>
                   Tech stack
                 </Text>
@@ -210,7 +210,7 @@ export default function Index() {
             </Box>
             <Box mt={"20px"}>
               <HStack>
-                <Text as={FaMusic} fontSize={"lg"}></Text>
+                <Text as={HiOutlineMusicalNote} fontSize={"3xl"} pt={1}></Text>
                 <Text fontSize={"2xl"} as={"u"}>
                   Music
                 </Text>
