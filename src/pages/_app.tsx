@@ -40,8 +40,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Box
-        height={"100vh"}
-        bgGradient="linear-gradient(to bottom right, #005244, #49063b)"
+        height={"100%"}
+        minHeight={"100vh"}
+        bgGradient="linear-gradient(to bottom right, #B00B69, #420A55, #042069)" // lol
       >
         <Header />
         <Analytics />
