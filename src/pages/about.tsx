@@ -1,5 +1,5 @@
 // Chakra
-import { Box, Center, Text, Checkbox, useTheme, Link } from "@chakra-ui/react";
+import { Box, Center, Text, Link } from "@chakra-ui/react";
 
 // Components
 import Header from "@/components/Header";
@@ -16,7 +16,7 @@ export default function About() {
         <Box w={{ base: "100vw", md: "70vw" }} p={"20px"}>
           <Center>
             <Text fontSize="2xl" fontWeight="medium">
-              Site version: 2.1.5{" "}
+              Site version: 2.1.6{" "}
             </Text>
           </Center>
           <Text fontSize="2xl" fontWeight="bold">

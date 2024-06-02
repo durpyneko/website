@@ -18,6 +18,15 @@ const theme = extendTheme({
     customButtonBackground: "#1d1d1d",
   },
   accent: {
+    light: "#B00B69",
+    default: "#B00B69",
+    dark: "#420A55",
+    bg: "#420A55",
+    divider: "#042069",
+    transparent: "transparent",
+  },
+  /*
+   accent: {
     light: "#964c9c",
     default: "#7f4085",
     dark: "#68346d",
@@ -25,6 +34,7 @@ const theme = extendTheme({
     divider: "#474257",
     transparent: "transparent",
   },
+   */
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
