@@ -48,6 +48,15 @@ export default function Projects() {
           </GridItem>
           <GridItem>
             <ProjectsBox
+              title={"loggy-neko"}
+              href={"https://github.com/durpyneko/loggy-neko"}
+              github=""
+              image={"/project_thumbnails/loggy-banner.png"}
+              description={"Thread-safe logging tool with dynamic log level configuration."}
+            />
+          </GridItem>
+          <GridItem>
+            <ProjectsBox
               title={"Kikuri web"}
               href={"https://kikuri.durpy.dev"}
               github="https://github.com/durpyneko/kikuri-web"
