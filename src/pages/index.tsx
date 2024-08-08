@@ -106,13 +106,17 @@ export default function Index() {
 
       const otherActivities = activities
         ?.filter((activity) => activity.name !== "Spotify")
-        .map(({ name, timestamps }: any) => ({
-          name: name || "No activity",
-          startTimestamp:
-            typeof timestamps.start === "string"
-              ? parseInt(timestamps.start)
-              : timestamps.start || 0,
-        }));
+        .map(({ name, timestamps }: any) => {
+          const startTimestamp =
+            timestamps && typeof timestamps.start === "number"
+              ? timestamps.start
+              : 0;
+
+          return {
+            name: name || "No activity",
+            startTimestamp,
+          };
+        });
 
       setActivities(otherActivities);
 
