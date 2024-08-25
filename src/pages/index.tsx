@@ -305,15 +305,15 @@ export default function Index() {
                     p={2}
                     borderTopRadius={"8px"}
                     justifyContent="space-between"
-                    borderBottom={"none"}
                     bg={"rgba(255, 255, 255, 0.05)"}
                     backdropFilter={"blur(10px)"}
                     border={"1px solid rgba(255, 255, 255, 0.2)"}
+                    borderBottom={"none"}
                   >
                     <Text>Activities</Text>
                     <Text>—⠀❐⠀⤬</Text>
                   </Flex>
-                  <Divider bg={"grey"} />
+                  <Divider bg={"#3f3e3f"} />
                   {activities.map(({ name }: any, index: number) => (
                     <Box
                       key={index}
