@@ -16,7 +16,7 @@ export default function About() {
         <Box w={{ base: "100vw", md: "70vw" }} p={"20px"}>
           <Center>
             <Text fontSize="2xl" fontWeight="medium">
-              Site version: 2.2.7{" "}
+              Site version: 2.2.9{" "}
             </Text>
           </Center>
           <Text fontSize="2xl" fontWeight="bold">

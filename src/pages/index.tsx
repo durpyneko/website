@@ -260,7 +260,7 @@ export default function Index() {
               >
                 <Text>• J-Metal/Rock, Metal, Djent</Text>
                 <Text>• DnB, Breakcore</Text>
-                <Text>• Breakbeat</Text>
+                <Text>• Breakbeat, Glitchbreak</Text>
                 <Text>• Techno</Text>
                 <Text>• J-Pop</Text>
               </Box>

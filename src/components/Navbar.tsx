@@ -32,8 +32,9 @@ export default function Navbar() {
         fontWeight={"bold"}
         fontSize={"1.5rem"}
         textAlign={"center"}
-        /* position={"sticky"}
-        top={0} */
+        top={0}
+        position={"sticky"}
+        zIndex={9999}
         borderBottomRadius={"25px"}
         bgColor={theme.accent.transparent}
         // style={{ backdropFilter: "blur(20px)" }}
