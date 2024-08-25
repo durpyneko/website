@@ -55,8 +55,8 @@ interface UserData {
 }
 
 // Icons
-import { LuCode2 } from "react-icons/lu";
-import { HiOutlineMusicalNote } from "react-icons/hi2";
+/* import { LuCode2 } from "react-icons/lu";
+import { HiOutlineMusicalNote } from "react-icons/hi2"; */
 
 // Fonts
 import { JetBrains_Mono } from "next/font/google";
@@ -235,18 +235,18 @@ export default function Index() {
           <Box px={{ base: "0", md: "50px" }} mt={"20px"}>
             <Box>
               <HStack>
-                <Text as={LuCode2} fontSize={"3xl"}></Text>
-                <Text fontSize={"2xl"} as={"u"}>
-                  Tech stack
+                {/* <Text as={LuCode2} fontSize={"3xl"}></Text> */}
+                <Text fontSize={"2xl"} fontWeight="bold" /* as={"u"} */>
+                  # Tech stack
                 </Text>
               </HStack>
               <TechStack />
             </Box>
             <Box mt={"20px"}>
               <HStack>
-                <Text as={HiOutlineMusicalNote} fontSize={"3xl"} pt={1}></Text>
-                <Text fontSize={"2xl"} as={"u"}>
-                  Music
+                {/* <Text as={HiOutlineMusicalNote} fontSize={"3xl"} pt={1}></Text> */}
+                <Text fontSize={"2xl"} fontWeight="bold" /* as={"u"} */>
+                  # Genres I listen to
                 </Text>
               </HStack>
               <Box
@@ -260,6 +260,7 @@ export default function Index() {
               >
                 <Text>• J-Metal/Rock, Metal, Djent</Text>
                 <Text>• DnB, Breakcore</Text>
+                <Text>• Breakbeat</Text>
                 <Text>• Techno</Text>
                 <Text>• J-Pop</Text>
               </Box>
