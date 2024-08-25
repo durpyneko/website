@@ -36,8 +36,9 @@ export default function ProjectsBox({
         <Box
           w={{ base: "300px", md: "360px" }} // Set to 300px on smaller screens
           h={{ base: "300px", md: "360px" }}
-          borderColor={"#ffffff50"}
-          borderWidth={"1px"}
+          bg={"rgba(255, 255, 255, 0.05)"}
+          backdropFilter={"blur(10px)"}
+          border={"1px solid rgba(255, 255, 255, 0.2)"}
           borderRadius={"8px"}
           padding={"20px"}
           shadow={"xl"}

@@ -153,6 +153,9 @@ export default function Index() {
             <Avatar
               size="md"
               src={`https://cdn.discordapp.com/avatars/763864687481323620/${avatar}.png?size=128`}
+              mb={"-80px"}
+              ml={"-15px"}
+              zIndex={1}
             >
               <AvatarBadge
                 boxSize="1em"
@@ -167,7 +170,29 @@ export default function Index() {
                 }
               />
             </Avatar>
-            <Text fontSize="3xl" ml={"8px"}>
+            <Box
+              p={"5px"}
+              borderRadius={"50%"}
+              bg={"rgba(255, 255, 255, 0.05)"}
+              backdropFilter={"blur(10px)"}
+              border={"1px solid rgba(255, 255, 255, 0.2)"}
+              mb={"-20px"}
+            />
+            <Box
+              p={"10px"}
+              borderRadius={"50%"}
+              bg={"rgba(255, 255, 255, 0.05)"}
+              backdropFilter={"blur(10px)"}
+              border={"1px solid rgba(255, 255, 255, 0.2)"}
+            />
+            <Text
+              fontSize="3xl"
+              p={"10px"}
+              borderRadius={"25px"}
+              bg={"rgba(255, 255, 255, 0.05)"}
+              backdropFilter={"blur(10px)"}
+              border={"1px solid rgba(255, 255, 255, 0.2)"}
+            >
               Hey, I'm{" "}
               <Text
                 as="span"
@@ -188,13 +213,18 @@ export default function Index() {
             p={"2px"}
             margin={"10px"}
             borderColor={"#ffffff50"}
-            borderWidth={"1px"}
             borderRadius={"8px"}
             shadow={"xl"}
+            bg={"rgba(255, 255, 255, 0.05)"}
+            backdropFilter={"blur(10px)"}
+            border={"1px solid rgba(255, 255, 255, 0.2)"}
           >
             <Text fontSize={"md"} p={"20px"}>
-              Welcome to my site! I am a frontend and software developer in my
-              free time. My "favourite" game is War Thunder. Expanded{" "}
+              Welcome to my site! I am a front/back-end and software developer
+              in my free time. I like typed languages. Rust is bae, Ferris is
+              cute. My "favourite" game is War Thunder.{" "}
+              <Link href="https://www.renshuu.org/me/1038355">Renshuu</Link>.
+              Expanded{" "}
               <NextLink href="/about" passHref>
                 <Text as={"span"} textDecor="underline">
                   here
@@ -222,10 +252,11 @@ export default function Index() {
               <Box
                 mt={"5px"}
                 p={"10px"}
-                borderColor={"#ffffff50"}
-                borderWidth={"1px"}
                 borderRadius={"8px"}
                 shadow={"xl"}
+                bg={"rgba(255, 255, 255, 0.05)"}
+                backdropFilter={"blur(10px)"}
+                border={"1px solid rgba(255, 255, 255, 0.2)"}
               >
                 <Text>• J-Metal/Rock, Metal, Djent</Text>
                 <Text>• DnB, Breakcore</Text>
@@ -247,8 +278,9 @@ export default function Index() {
                       p={2}
                       borderTopRadius={"8px"}
                       justifyContent="space-between"
-                      borderColor={"#ffffff50"}
-                      borderWidth={"1px"}
+                      bg={"rgba(255, 255, 255, 0.05)"}
+                      backdropFilter={"blur(10px)"}
+                      border={"1px solid rgba(255, 255, 255, 0.2)"}
                     >
                       <Text>Now playing</Text>
                       <Text>—⠀❐⠀⤬</Text>
@@ -272,9 +304,10 @@ export default function Index() {
                     p={2}
                     borderTopRadius={"8px"}
                     justifyContent="space-between"
-                    borderColor={"#ffffff50"}
-                    borderWidth={"1px"}
                     borderBottom={"none"}
+                    bg={"rgba(255, 255, 255, 0.05)"}
+                    backdropFilter={"blur(10px)"}
+                    border={"1px solid rgba(255, 255, 255, 0.2)"}
                   >
                     <Text>Activities</Text>
                     <Text>—⠀❐⠀⤬</Text>
@@ -284,8 +317,9 @@ export default function Index() {
                     <Box
                       key={index}
                       p={"10px"}
-                      borderColor={"#ffffff50"}
-                      borderWidth={"1px"}
+                      bg={"rgba(255, 255, 255, 0.05)"}
+                      backdropFilter={"blur(10px)"}
+                      border={"1px solid rgba(255, 255, 255, 0.2)"}
                       borderTop={"none"}
                       shadow={"xl"}
                       width={{ base: "80vw", md: "360px" }}

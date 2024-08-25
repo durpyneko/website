@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Chakra
+import { keyframes } from "@emotion/react";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import theme from "@/lib/theme";
 
@@ -36,14 +37,33 @@ if (typeof window !== "undefined") {
 import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
+const continuousGradientAnimation = keyframes`
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+`;
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Box
-        height={"100%"}
-        minHeight={"100vh"}
-        bgGradient="linear-gradient(to bottom right, #B00B69, #420A55, #042069)" // lol
-      >
+      <Box position="relative" height={"100%"} minHeight={"100vh"}>
+        <Box
+          _before={{
+            content: `""`,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vw",
+            backgroundSize: "cover",
+            background: "url('bg.gif') center",
+            filter: "brightness(0.2)",
+            zIndex: -1,
+          }}
+        />
         <Header />
         <Analytics />
         <SpeedInsights />

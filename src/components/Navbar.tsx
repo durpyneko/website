@@ -32,10 +32,15 @@ export default function Navbar() {
         fontWeight={"bold"}
         fontSize={"1.5rem"}
         textAlign={"center"}
+        /* position={"sticky"}
+        top={0} */
         borderBottomRadius={"25px"}
         bgColor={theme.accent.transparent}
         // style={{ backdropFilter: "blur(20px)" }}
         className={JetBrainsMono.className}
+        bg={"rgba(255, 255, 255, 0.05)"}
+        backdropFilter={"blur(10px)"}
+        border={"1px solid rgba(255, 255, 255, 0.2)"}
       >
         <Center>
           <Tabs variant={"unstyled"} colorScheme="gray">

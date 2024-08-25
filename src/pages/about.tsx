@@ -16,13 +16,21 @@ export default function About() {
         <Box w={{ base: "100vw", md: "70vw" }} p={"20px"}>
           <Center>
             <Text fontSize="2xl" fontWeight="medium">
-              Site version: 2.1.6{" "}
+              Site version: 2.2.6{" "}
             </Text>
           </Center>
           <Text fontSize="2xl" fontWeight="bold">
             # About me
           </Text>
-          <Text fontSize="lg" mt={2}>
+          <Text
+            fontSize="lg"
+            mt={2}
+            bg={"rgba(255, 255, 255, 0.05)"}
+            backdropFilter={"blur(10px)"}
+            border={"1px solid rgba(255, 255, 255, 0.2)"}
+            padding={"10px"}
+            borderRadius={"8px"}
+          >
             Currently a freelance developer. I enjoy making scripts but I have
             found myself doing allot of web dev. Besides web dev I help maintain
             a portion of the backend services on{" "}
@@ -46,7 +54,15 @@ export default function About() {
           <Text fontSize="2xl" fontWeight="bold" mt={5}>
             # Commission / Requests
           </Text>
-          <Text fontSize="lg" mt={2}>
+          <Text
+            fontSize="lg"
+            mt={2}
+            bg={"rgba(255, 255, 255, 0.05)"}
+            backdropFilter={"blur(10px)"}
+            border={"1px solid rgba(255, 255, 255, 0.2)"}
+            padding={"10px"}
+            borderRadius={"8px"}
+          >
             I will take commission requests for anything related to frontend,
             backend, software or scripts. You can contact me through{" "}
             <Text as={"span"} className="username-gradient">

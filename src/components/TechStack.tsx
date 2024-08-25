@@ -9,10 +9,11 @@ export default function TechStack() {
     <Box
       mt={"5px"}
       p={"10px"}
-      borderColor={"#ffffff50"}
-      borderWidth={"1px"}
       borderRadius={"8px"}
       shadow={"xl"}
+      bg={"rgba(255, 255, 255, 0.05)"}
+      backdropFilter={"blur(10px)"}
+      border={"1px solid rgba(255, 255, 255, 0.2)"}
     >
       <Box p={1}>
         <Box pb={2}>

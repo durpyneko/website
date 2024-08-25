@@ -45,8 +45,9 @@ export default function SpotifyBox({
 
   return (
     <Box
-      borderColor={"#ffffff50"}
-      borderWidth={"1px"}
+      bg={"rgba(255, 255, 255, 0.05)"}
+      backdropFilter={"blur(10px)"}
+      border={"1px solid rgba(255, 255, 255, 0.2)"}
       borderTop={"none"}
       width={{ base: "80vw", md: "360px" }}
       maxW={{ base: "80vw", md: "360px" }}

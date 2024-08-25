@@ -27,28 +27,26 @@ export default function SocialsButton({
   const [siteTitle, setSiteTitle] = useState();
 
   useEffect(() => {
-    const websiteNameMatch = href.match(/:\/\/(www\.)?([^/]+)\/?/);
+    const subdomainMatch = href.match(/:\/\/(www\.)?([^./]+)/);
 
-    if (websiteNameMatch && websiteNameMatch[2]) {
-      const websiteName = websiteNameMatch[2].replace(
-        /\.(com|co|app|net|tv)$/,
-        ""
-      );
-
-      const capitalizedWebsiteName =
-        websiteName.charAt(0).toUpperCase() + websiteName.slice(1);
-
-      setSiteTitle(capitalizedWebsiteName);
+    if (subdomainMatch && subdomainMatch[2]) {
+      const subdomain = subdomainMatch[2];
+      setSiteTitle(subdomain.charAt(0).toUpperCase() + subdomain.slice(1));
     } else {
       setSiteTitle(href);
     }
   }, [href]);
+
   return (
     <>
       <Box
         css={{
           animation: "slideDown 0.2s ease-in-out",
         }}
+        bg={"rgba(255, 255, 255, 0.05)"}
+        backdropFilter={"blur(10px)"}
+        border={"1px solid rgba(255, 255, 255, 0.2)"}
+        borderRadius={"8px"}
       >
         <Link
           href={href}
@@ -59,9 +57,6 @@ export default function SocialsButton({
             w={{ base: "280px", md: "440px" }} // Set to 280px on smaller screens
             h={"60px"}
             p={"10px"}
-            borderColor={"#ffffff50"}
-            borderWidth={"1px"}
-            borderRadius={"8px"}
             shadow={"xl"}
             title={siteTitle}
           >
