@@ -53,13 +53,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Box
           _before={{
             content: `""`,
-            position: "fixed",
+            position: "absolute",
             top: 0,
             left: 0,
-            width: "100vw",
-            height: "100vw",
+            width: "100%",
+            height: "100%",
             backgroundSize: "cover",
-            background: "url('bg.gif') center",
+            background: "url('bg.gif')",
             filter: "brightness(0.2)",
             zIndex: -1,
           }}
