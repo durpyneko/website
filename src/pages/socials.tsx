@@ -10,11 +10,10 @@ import { JetBrains_Mono } from "next/font/google";
 const JetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 // Icons
-import { FaDiscord, FaTwitch, FaTwitter } from "react-icons/fa";
+import { FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiAnilist } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
-import { PiButterflyFill } from "react-icons/pi";
 
 export default function SocialsContent() {
   return (
@@ -23,14 +22,13 @@ export default function SocialsContent() {
       <Center className={`${JetBrainsMono.className}`} p={"20px"}>
         <VStack>
           <SocialsButton
-            icon={PiButterflyFill}
-            href={"https://bsky.app/profile/durpy.dev"}
-          />
-          <SocialsButton
             icon={FaTwitter}
             href={"https://twitter.com/durpyneko"}
           />
-          <SocialsButton icon={FaDiscord} href={"durpyneko"} />
+          <SocialsButton
+            icon={FaYoutube}
+            href={"https://www.youtube.com/@durpyneko"}
+          />
           <SocialsButton
             icon={FaTwitch}
             href={"https://www.twitch.tv/durpyneko"}
@@ -42,10 +40,6 @@ export default function SocialsContent() {
           <SocialsButton
             icon={SiAnilist}
             href={"https://anilist.co/user/durpyneko"}
-          />
-          <SocialsButton
-            icon={FaSteam}
-            href={"https://steamcommunity.com/id/durpyneko/"}
           />
         </VStack>
       </Center>
