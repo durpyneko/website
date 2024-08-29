@@ -27,7 +27,7 @@ export default function SocialsContent() {
           />
           <SocialsButton
             icon={FaYoutube}
-            href={"https://www.youtube.com/@durpyneko"}
+            href={"https://www.youtube.com/@durpyneko-nya"}
           />
           <SocialsButton
             icon={FaTwitch}
